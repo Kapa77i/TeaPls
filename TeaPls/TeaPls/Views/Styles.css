@@ -1,0 +1,43 @@
+/* Main container */
+Grid {
+    Background-color: #F5F5F5;
+}
+
+/* Header container */
+StackLayout[BackgroundColor='#96d1ff'] {
+    Padding: 16;
+}
+
+/* Header image */
+Image {
+    Height: 64;
+    Width: 64;
+}
+
+/* Content container */
+ScrollView {
+    Padding: 16;
+    Background-color: #FFFFFF;
+}
+
+/* Title label */
+Label[FontSize='Title'] {
+    Margin: 16 0 8 0;
+    Text-color: #333;
+    Font-weight: Bold;
+}
+
+/* Description label */
+Label[FontSize='16'] {
+    Text-color: #333;
+    Margin-bottom: 8;
+}
+
+/* Learn more button */
+Button {
+    Height: 44;
+    Background-color: #96d1ff;
+    Border-radius: 22;
+    Text-color: #FFFFFF;
+    Font-weight: Bold;
+}
