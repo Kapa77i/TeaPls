@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Seban koulujuttuja\\Mobiilikurssi\\TeaPls\\TeaPls\\TeaPls.csproj": {}
+    "D:\\Visual Studio Projektit\\Koulu\\Mobiiliohjelmointi\\TeaPls\\TeaPls\\TeaPls.csproj": {}
   },
   "projects": {
-    "D:\\Seban koulujuttuja\\Mobiilikurssi\\TeaPls\\TeaPls\\TeaPls.csproj": {
+    "D:\\Visual Studio Projektit\\Koulu\\Mobiiliohjelmointi\\TeaPls\\TeaPls\\TeaPls.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Seban koulujuttuja\\Mobiilikurssi\\TeaPls\\TeaPls\\TeaPls.csproj",
+        "projectUniqueName": "D:\\Visual Studio Projektit\\Koulu\\Mobiiliohjelmointi\\TeaPls\\TeaPls\\TeaPls.csproj",
         "projectName": "TeaPls",
-        "projectPath": "D:\\Seban koulujuttuja\\Mobiilikurssi\\TeaPls\\TeaPls\\TeaPls.csproj",
-        "packagesPath": "C:\\Users\\halon\\.nuget\\packages\\",
-        "outputPath": "D:\\Seban koulujuttuja\\Mobiilikurssi\\TeaPls\\TeaPls\\obj\\",
+        "projectPath": "D:\\Visual Studio Projektit\\Koulu\\Mobiiliohjelmointi\\TeaPls\\TeaPls\\TeaPls.csproj",
+        "packagesPath": "C:\\Users\\unelm\\.nuget\\packages\\",
+        "outputPath": "D:\\Visual Studio Projektit\\Koulu\\Mobiiliohjelmointi\\TeaPls\\TeaPls\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\halon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\unelm\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -71,7 +71,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
