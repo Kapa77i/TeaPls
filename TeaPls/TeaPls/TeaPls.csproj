@@ -11,7 +11,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\RSS.xaml">
+    <Compile Update="Views\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\RSSPage.xaml.cs">
+      <DependentUpon>RSSPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\RSSPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
