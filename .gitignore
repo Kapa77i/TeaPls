@@ -1,22 +1,13 @@
 ﻿################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
-
-**/bin/*
-**/obj/*
-*/.vs/*
-*/bin/*
-*/obj/*
-**/.vs/*
-TeaPls/bin/*
-/obj/*
-/.vs/*
-
-/TeaPls/.vs
-/TeaPls/obj
-/TeaPls.Android/.vs/
-/TeaPls.Android/obj/
-
+*.vs
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
 
 
 
