@@ -411,3 +411,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 /Projektikansio/FrontEnd/wwwroot/temp.html
+/TeaPls/TeaPls.Android/obj/Debug/130/TeaPls.Android.csproj.AssemblyReference.cache
