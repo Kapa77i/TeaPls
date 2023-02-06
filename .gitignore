@@ -193,7 +193,12 @@ UpgradeLog*.htm
 FakesAssemblies/
 
 .vscode/settings.json
+/TeaPls/TeaPls.Android/obj/TeaPls.Android.csproj.nuget.g.props
+/TeaPls/TeaPls.Android/obj/TeaPls.Android.csproj.nuget.dgspec.json
+/TeaPls/TeaPls.Android/obj/project.nuget.cache
+/TeaPls/TeaPls.Android/obj/project.assets.json
+/TeaPls/TeaPls/obj/TeaPls.csproj.nuget.g.props
+/TeaPls/TeaPls/obj/TeaPls.csproj.nuget.dgspec.json
+/TeaPls/TeaPls/obj/project.nuget.cache
+/TeaPls/TeaPls/obj/project.assets.json
 /TeaPls/.vs/TeaPls/v17/.suo
-/TeaPls/TeaPls/obj/Debug/netstandard2.0/TeaPls.GeneratedMSBuildEditorConfig.editorconfig
-/TeaPls/TeaPls.Android/obj/Debug/130/designtime/build.props
-/TeaPls/TeaPls.Android/obj/Debug/130/designtime/Resource.designer.cs
