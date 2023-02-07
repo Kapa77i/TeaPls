@@ -16,11 +16,11 @@ namespace TeaPls.Views
 
             if (e.Value == true)
             {
-
+                App.Current.UserAppTheme = OSAppTheme.Dark;
             }
             else
             {
-
+                App.Current.UserAppTheme = OSAppTheme.Light;
             }
         }
     }

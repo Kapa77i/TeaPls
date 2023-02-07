@@ -1,15 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TeaPls.App">
+             x:Class="TeaPls.App"
+        
+    >
     <!--
         Define global resources and styles here, that apply to all pages in your app.
     -->
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Primary">HotPink</Color>
+            <Color x:Key="RefresColor">HotPink</Color>
+            <Color x:Key="BackGroundColorLight">#606c38</Color>
+            <Color x:Key="BackGroundColorDark">HotPink</Color>
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="White"></Setter>
+
+                <Setter Property="BackgroundColor" Value="HotPink"></Setter>
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">
