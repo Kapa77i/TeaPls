@@ -10,6 +10,10 @@ namespace TeaPls.Views
         {
             InitializeComponent();
         }
+        private void OnSwitchToggled(object sender, ToggledEventArgs e)
+        {
+            switchLabel.Text = $"The switch is {(e.Value ? "on" : "off")}.";
+        }
     }
 
 }

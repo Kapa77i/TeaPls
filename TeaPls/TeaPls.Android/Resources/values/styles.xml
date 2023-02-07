@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
 	<!-- Base theme applied no matter what API -->
-	<style name="MainTheme" parent="MainTheme.Base">
-		<!--Customize your theme here--><!--
+	<style name="MainTheme" parent="MainTheme.Light">
+		<!--Customize your theme here-->
+	</style>
+
+	<!--Light theme-->
+	<style name="MainTheme.Light" parent="MainTheme.Base">
 		<item name="colorPrimary">#ffcb7c</item>
 		<item name="colorPrimaryDark">#d8ec84</item>
 		<item name="colorAccent">#dff6fc</item>
 	</style>
 
-	--><!-- Base theme for API 21 and up --><!--
+	<!--Dark theme-->
+	<style name="MainTheme.Dark" parent="MainTheme.Base">
+		<item name="colorPrimary">#2196F3</item>
+		<item name="colorPrimaryDark">#1976D2</item>
+		<item name="colorAccent">#FF4081</item>
+	</style>
+
+	<!--Base theme for API 21 and up-->
 	<style name="MainTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
 		<item name="windowNoTitle">true</item>
 		<item name="windowActionBar">false</item>
-		<item name="colorPrimary">#2196F3</item>
-		<item name="colorPrimaryDark">#1976D2</item>
-		<item name="colorAccent">#FF4081</item>-->
 	</style>
 
 </resources>
+<!--You can switch between the light and dark themes in your code by setting the MainTheme style as the parent of
+either MainTheme.Light or MainTheme.Dark.-->

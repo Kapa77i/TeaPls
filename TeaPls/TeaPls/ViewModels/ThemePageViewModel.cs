@@ -20,7 +20,7 @@ namespace TeaPls.ViewModels
 
         private void ApplyTheme(bool isDarkMode)
         {
-            // Apply the theme by updating styles and colors
+
         }
         public ThemeiewModel()
         {

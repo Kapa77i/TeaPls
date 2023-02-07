@@ -6,8 +6,8 @@
       
 
         <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-            <Switch IsToggled="{Binding IsDarkModeEnabled}" />
-            <Label x:Name="switchLabel" Text="Yö" />
+            <Switch x:Name="mySwitch" Toggled="OnSwitchToggled" />
+            <Label x:Name="switchLabel" Text="The switch is off." />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
