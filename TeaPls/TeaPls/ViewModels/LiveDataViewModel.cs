@@ -1,18 +1,16 @@
-﻿using System.Windows.Input;
-using Xamarin.Essentials;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
-namespace TeaPls.ViewModels
+namespace TeaPls.Views
 {
-    public class RSSViewModel : BaseViewModel
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class LiveDataPage : ContentPage
     {
-
-        public RSSViewModel()
+        public LiveDataPage()
         {
-            Title = "LiveData";
-            OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
-
+            InitializeComponent();
         }
-        public ICommand OpenWebCommand { get; }
+
     }
+
 }

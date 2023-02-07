@@ -8,7 +8,7 @@
 	<!--Light theme-->
 	<style name="MainTheme.Light" parent="MainTheme.Base">
 		<item name="colorPrimary">#ffcb7c</item>
-		<item name="colorPrimaryDark">#d8ec84</item>
+		<item name="colorPrimaryDark">#1666a6</item>
 		<item name="colorAccent">#dff6fc</item>
 	</style>
 

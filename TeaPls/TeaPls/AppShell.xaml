@@ -87,11 +87,11 @@
     </FlyoutItem>
 
     <FlyoutItem Title="Feed" Icon="icon_data.png">
-        <ShellContent Route="LiveData" ContentTemplate="{DataTemplate local:LiveDataPage}" />
+        <ShellContent Route="LiveDataPage" ContentTemplate="{DataTemplate local:LiveDataPage}" />
     </FlyoutItem>
 
     <FlyoutItem Title="Theme" Icon="icon_theme.png">
-        <ShellContent Route="Theme" ContentTemplate="{DataTemplate local:ThemePage}" />
+        <ShellContent Route="ThemePage" ContentTemplate="{DataTemplate local:ThemePage}" />
     </FlyoutItem>
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
