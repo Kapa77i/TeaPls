@@ -9,14 +9,14 @@
     -->
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="Primary">HotPink</Color>
-            <Color x:Key="RefresColor">HotPink</Color>
-            <Color x:Key="BackGroundColorLight">#606c38</Color>
-            <Color x:Key="BackGroundColorDark">HotPink</Color>
+            <Color x:Key="Primary">Orange</Color>
+            <Color x:Key="RefresColor">Orange</Color>
+            <Color x:Key="BackGroundColorLight">#979dac</Color>
+            <Color x:Key="BackGroundColorDark">#335c67</Color>
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="White"></Setter>
 
-                <Setter Property="BackgroundColor" Value="HotPink"></Setter>
+                <Setter Property="BackgroundColor" Value="Orange"></Setter>
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">

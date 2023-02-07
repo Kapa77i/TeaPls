@@ -3,7 +3,8 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:TeaPls.Views"
        Title="TeaPls"
-       x:Class="TeaPls.AppShell">
+       x:Class="TeaPls.AppShell"
+       FlyoutBackgroundColor="{AppThemeBinding Dark={StaticResource BackGroundColorDark}, Light={StaticResource BackGroundColorLight}}">
 
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
@@ -14,13 +15,13 @@
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.BackgroundColor" Value="black" />
+                <Setter Property="Shell.BackgroundColor" Value="#1666a6" />
                 <Setter Property="Shell.ForegroundColor" Value="Orange" />
-                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="Orange" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
-                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarBackgroundColor" Value="Orange" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="#1f1c18"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="White"/>
             </Style>
@@ -46,7 +47,7 @@
                             </VisualState>
                             <VisualState x:Name="Selected">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                                    <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource BackGroundColorLight}, Light={StaticResource BackGroundColorDark}}" />
                                 </VisualState.Setters>
                             </VisualState>
                         </VisualStateGroup>
