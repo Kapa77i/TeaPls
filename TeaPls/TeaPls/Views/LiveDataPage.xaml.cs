@@ -9,6 +9,7 @@ namespace TeaPls.ViewModels
     {
         public RSS()
         {
+            Title = "LiveData";
             InitializeComponent();
         }
 

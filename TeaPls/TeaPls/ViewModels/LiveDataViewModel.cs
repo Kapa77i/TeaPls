@@ -9,7 +9,7 @@ namespace TeaPls.ViewModels
 
         public RSSViewModel()
         {
-            Title = "RSS";
+            Title = "LiveData";
             OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
 
         }
