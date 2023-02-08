@@ -202,3 +202,7 @@ FakesAssemblies/
 /TeaPls/TeaPls/obj/project.nuget.cache
 /TeaPls/TeaPls/obj/project.assets.json
 /TeaPls/.vs/TeaPls/v17/.suo
+/TeaPls/TeaPls/obj/Debug/netstandard2.0/TeaPls.GeneratedMSBuildEditorConfig.editorconfig
+/TeaPls/TeaPls/obj/Debug/netstandard2.0/TeaPls.csproj.AssemblyReference.cache
+/TeaPls/TeaPls/obj/Debug/netstandard2.0/TeaPls.assets.cache
+/TeaPls/TeaPls.Android/obj/Debug/130/designtime/Resource.designer.cs
