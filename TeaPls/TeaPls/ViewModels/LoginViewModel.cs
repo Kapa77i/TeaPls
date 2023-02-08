@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TeaPls.Views;
+﻿using TeaPls.Views;
 using Xamarin.Forms;
 
 namespace TeaPls.ViewModels
@@ -12,6 +9,7 @@ namespace TeaPls.ViewModels
 
         public LoginViewModel()
         {
+            Title = "Login";
             LoginCommand = new Command(OnLoginClicked);
         }
 

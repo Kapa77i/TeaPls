@@ -5,7 +5,8 @@
              Title="{Binding Title}"
              xmlns:local="clr-namespace:TeaPls.ViewModels"  
              xmlns:model="clr-namespace:TeaPls.Models"  
-             x:Name="BrowseItemsPage">
+             x:Name="BrowseItemsPage"
+             BackgroundColor="{AppThemeBinding Dark={StaticResource BackGroundColorDark}, Light={StaticResource BackGroundColorLight}}">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />

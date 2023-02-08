@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeaPls.Views.ThemePage" Title="Theme"
+              BackgroundColor="{AppThemeBinding Dark={StaticResource BackGroundColorDark}, Light={StaticResource BackGroundColorLight}}">
+    <ContentPage.Resources>
+        <Style x:Key="DarkMode" TargetType="StackLayout">
+            <Setter Property="BackgroundColor" Value="#333333" />
+        </Style>
+        <Style x:Key="LightMode" TargetType="StackLayout">
+            <Setter Property="BackgroundColor" Value="#FFFFFF" />
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+
+        <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+            <Switch x:Name="mySwitch" Toggled="OnSwitchToggled" />
+            <Label x:Name="switchLabel" Text="Night mod: " />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

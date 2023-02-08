@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
+	<!-- Base theme applied no matter what API -->
+	<style name="MainTheme" parent="MainTheme.Light">
+		<!--Customize your theme here-->
+	</style>
 
-  <style name="MainTheme" parent="MainTheme.Base">
-    <!-- As of Xamarin.Forms 4.6 the theme has moved into the Forms binary -->
-    <!-- If you want to override anything you can do that here. -->
-    <!-- Underneath are a couple of entries to get you started. -->
+	<!--Light theme-->
+	<style name="MainTheme.Light" parent="MainTheme.Base">
+		<item name="colorPrimary">#ffcb7c</item>
+		<item name="colorPrimaryDark">#1666a6</item>
+		<item name="colorAccent">#dff6fc</item>
+	</style>
 
-    <!-- Set theme colors from https://aka.ms/material-colors -->
-    <!-- colorPrimary is used for the default action bar background -->
-    <!--<item name="colorPrimary">#2196F3</item>-->
-    <!-- colorPrimaryDark is used for the status bar -->
-    <!--<item name="colorPrimaryDark">#1976D2</item>-->
-    <!-- colorAccent is used as the default value for colorControlActivated
-         which is used to tint widgets -->
-    <!--<item name="colorAccent">#FF4081</item>-->
-  </style>
+	<!--Dark theme-->
+	<style name="MainTheme.Dark" parent="MainTheme.Base">
+		<item name="colorPrimary">#2196F3</item>
+		<item name="colorPrimaryDark">#1976D2</item>
+		<item name="colorAccent">#ffcb7c</item>
+	</style>
+
+	<!--Base theme for API 21 and up-->
+	<style name="MainTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+		<item name="windowNoTitle">true</item>
+		<item name="windowActionBar">false</item>
+	</style>
+
 </resources>
+<!--You can switch between the light and dark themes in your code by setting the MainTheme style as the parent of
+either MainTheme.Light or MainTheme.Dark.-->

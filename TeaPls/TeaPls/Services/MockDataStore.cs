@@ -14,12 +14,12 @@ namespace TeaPls.Services
         {
             items = new List<Item>()
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." }
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Lipton Earl grey", Description="Maustettu musta tee bergamottiaromilla. Hienovaraisen voimakas ja aromirikas bergamotilla maustettu musta tee." },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Nordqvist Tiikerin päiväuni", Description="Herkullinen tiikeriklassikko jo vuosien takaa. Pehmeää hunajaa sekä raikkaita mustaseljan ja kvittenin aromeja. " },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Clipper Sitruuna-inkivääri", Description="Virkistävä ja kirpeä sitruunainen tee, jossa mukana potkua antamassa inkivääriä. Mukana teessä tujaus makua antavaa lakritsinjuurta, joka avittaa mm. ruuansulatusta." },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Clipper Vihreä chai", Description="Kevyt ja virkistävä vihreä tee huolellisesti sekoitettuna perinteisen Intialaisen Chai teen ainesosiin: lämmittävä kaneli, kardemumma, sekä neilikka." },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Forsman Luomu appelsiini", Description="Mustan Appelsiiniteen makuelämyksen takana ovat appelsiinin kuoripalat ja appelsiiniöljy. Aistikas tuoksu korostuu erityisesti eteerisen appelsiiniöljyn kautta." },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Forsman Russia samovar blend", Description="Samovar Blend mustan teen sekoitukseen kuuluu hedelmäinen sekoitus ananas-, papaija- ja appelsiinin paloja. Tämän lisäksi tämä lievästi kofeiinipitoinen musta teemme sisältää saflorin kukkia ja tietenkin kvitteniä, jotka mahdollistavat tämän teeseoksen makunystyröitä hellästi hivelevän kokonaisuuden. " }
             };
         }
 
