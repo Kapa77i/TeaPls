@@ -18,6 +18,10 @@
                 <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
                 <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
             </StackLayout>
+            <Button Text="Take a Photo"    
+                    x:Name="takePhoto"    
+                    BackgroundColor="Fuchsia"/>
+            <Image x:Name="image"/>
         </StackLayout>
     </ContentPage.Content>
 
