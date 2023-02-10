@@ -3,6 +3,8 @@
 
 # Visual Studio (>=2015) project-specific, machine local files
 .vs/
+/TeaPls/TeaPls.Android/bin
+/TeaPls/TeaPls/bin
 
 # User-specific files
 *.suo
@@ -243,7 +245,8 @@ FakesAssemblies/
 .Trashes
 ehthumbs.db
 Thumbs.db
-/TeaPls/TeaPls.Android/obj/Debug/130/lp/103/jl/res.zip
+/TeaPls/TeaPls.Android/bin
+
 /TeaPls/TeaPls.Android/obj/Debug/130/lp/53/jl/res.zip
 /TeaPls/TeaPls.Android/obj/Debug/130/lp/54/jl/res.zip
 /TeaPls/TeaPls.Android/obj/Debug/130/lp/60/jl/res.zip
