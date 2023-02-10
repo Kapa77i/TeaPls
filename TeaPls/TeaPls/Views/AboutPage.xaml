@@ -32,13 +32,14 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                <Span Text="Hottest tea at the moment: "/>
+                                <Span Text="Tea recommendations: "/>
                                 <Span x:Name="HotTea"  Text="Early Gray"/>
+
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-
+                <Button Text="Next recommendation" Clicked="OnButtonClicked"/>
             </StackLayout>
         </ScrollView>
     </Grid>
