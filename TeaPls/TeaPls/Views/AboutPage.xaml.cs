@@ -1,15 +1,26 @@
 ﻿using System;
-using System.ComponentModel;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace TeaPls.Views
 {
     public partial class AboutPage : ContentPage
     {
+        // Arvot random teehen
+        private readonly string[] colors = { "Red", "Blue", "Green", "Yellow", "Purple", "HotPink" };
+        private readonly string[] adjectives = { "Vibrant", "Rich", "Calming", "Cheerful", "Elegant", "Satisfyer" };
+
         public AboutPage()
         {
             InitializeComponent();
+            //Arvotaan randomi väri ja adjektiivi
+            Random random = new Random();
+            int RandomColor = random.Next(0, colors.Length);
+            int RandomAdjective = random.Next(0, adjectives.Length);
+            //muodostetaan noilla randomeilla uusi tee ja syötetään se frinttiin HotTea nimiseen elementtiin "frontissa".
+            HotTea.Text = $"{colors[RandomColor]} {adjectives[RandomAdjective]}";
+
         }
+
+
     }
 }

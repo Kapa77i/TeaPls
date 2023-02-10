@@ -32,8 +32,8 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                <Span Text="Lue lisää "/>
-                                <Span Text="https://irtihuumeista.fi/" FontAttributes="Bold"/>
+                                <Span Text="Hottest tea at the moment: "/>
+                                <Span x:Name="HotTea"  Text="Early Gray"/>
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
