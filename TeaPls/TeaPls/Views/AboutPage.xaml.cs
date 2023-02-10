@@ -15,7 +15,7 @@ namespace TeaPls.Views
             RandomTeaGenerator();
 
         }
-        private void OnButtonClicked(object sender, EventArgs e)
+        private void RandomTeaButton(object sender, EventArgs e)
         {
             //Tämä on vain nappia varten, joka luo uuden nimen teelle..
             RandomTeaGenerator();
@@ -27,7 +27,7 @@ namespace TeaPls.Views
             int RandomColor = random.Next(0, colors.Length);
             int RandomAdjective = random.Next(0, adjectives.Length);
             //muodostetaan noilla randomeilla uusi tee ja syötetään se frinttiin HotTea nimiseen elementtiin "frontissa".
-            HotTea.Text = $"{colors[RandomColor]} {adjectives[RandomAdjective]}";
+            randomTea.Text = $"{colors[RandomColor]} {adjectives[RandomAdjective]}";
         }
 
     }
