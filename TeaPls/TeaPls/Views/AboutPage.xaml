@@ -27,19 +27,23 @@
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
 
-                <Label Text="Tiesitkö, että teen juonti voi vähentää ihmisen onnellisuutta jopa 100%?" FontSize="16" Padding="0,0,0,0"/>
-                <Label FontSize="16" Padding="0,24,0,0">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="Tea recommendations: "/>
-                                <Span x:Name="randomTea"  Text="Early Gray"/>
 
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Button Text="Next recommendation" Clicked="RandomTeaButton"/>
+                <Frame CornerRadius="12" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="30,24,30,24">
+
+                    <Label Text="Tiesitkö, että teen juonti voi vähentää ihmisen onnellisuutta jopa 100%?" FontSize="16" Padding="0,0,0,0"/>
+                </Frame>
+
+
+
+
+                <Frame CornerRadius="12" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="30,24,30,24">
+  
+                    <StackLayout Orientation="Vertical">                    
+                        <Label FontSize="16" Padding="0,24,0,0" x:Name="randomTea" Text="Early Gray"/>
+                        <Button Text="Next recommendation" Clicked="RandomTeaButton"/>
+                    </StackLayout>
+                </Frame>
+
             </StackLayout>
         </ScrollView>
     </Grid>
