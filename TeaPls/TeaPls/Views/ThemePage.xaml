@@ -14,8 +14,18 @@
 
                 <Frame CornerRadius="12" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="30,24,30,24">
                     <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                        <Switch x:Name="mySwitch" Toggled="OnSwitchToggled" />
-                        <Label x:Name="switchLabel" Text="Night mod: " />
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Switch x:Name="mySwitch" Toggled="OnSwitchToggled" Grid.Row="0" Grid.Column="1"/>
+                            <Label x:Name="switchLabel" Text="Night mod: " Grid.Row="0" Grid.Column="0"/>
+                        </Grid>
                     </StackLayout>
                 </Frame>   
             </StackLayout>
