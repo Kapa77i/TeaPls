@@ -29,20 +29,61 @@
 
 
                 <Frame CornerRadius="12" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="30,24,30,24">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
 
-                    <Label Text="Tiesitkö, että teen juonti voi vähentää ihmisen onnellisuutta jopa 100%?" TextColor="{StaticResource TextColorDark}" FontSize="16" Padding="0,0,0,0"/>
+                        <Label Grid.Row="0" 
+         FontSize="20" 
+         TextColor="{StaticResource TextColorDark}"  
+         Text="Nice to know." />
+                        <Label Grid.Row="1" FontSize="16" Text="Did you know that drinking tea can reduce a person's happiness by up to 100%?" TextColor="{StaticResource TextColorDark}" />
+                    </Grid>
                 </Frame>
+
 
 
 
 
                 <Frame CornerRadius="12" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="30,24,30,24">
-  
                     <StackLayout Orientation="Vertical">
-                        <Label FontSize="16" TextColor="{StaticResource TextColorDark}"  Padding="0,24,0,0" x:Name="randomTea" Text="Early Gray" />
-                        <Button Text="Next recommendation" Clicked="RandomTeaButton" />
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" 
+                               FontSize="20" 
+                               TextColor="{StaticResource TextColorDark}"  
+                               Text="Recommendation" />
+
+                            <Label Grid.Row="1" 
+                               FontSize="16" 
+                               TextColor="{StaticResource TextColorDark}"  
+                               x:Name="randomTea" 
+                               Text="Early Gray" />
+
+                            <Label Grid.Row="2" 
+                               FontSize="16" 
+                               TextColor="{StaticResource TextColorDark}"  
+                               x:Name="randomBrand" 
+                               Text="Brand Name" />
+
+                            <Button Grid.Row="3" 
+                                Text="Pour more" 
+                                Clicked="RandomTeaButton" />
+                        </Grid>
+
                     </StackLayout>
                 </Frame>
+
+
+
+
 
             </StackLayout>
         </ScrollView>
