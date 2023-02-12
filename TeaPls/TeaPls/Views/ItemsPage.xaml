@@ -9,7 +9,7 @@
              BackgroundColor="{AppThemeBinding Dark={StaticResource BackGroundColorDark}, Light={StaticResource BackGroundColorLight}}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
+        <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" Icon="icon_add.png" />
     </ContentPage.ToolbarItems>
     <!--
       x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
