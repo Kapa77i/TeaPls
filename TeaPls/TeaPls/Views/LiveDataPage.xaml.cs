@@ -1,21 +1,18 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using TeaPls.ViewModels;
 
-namespace TeaPls.ViewModels
+namespace TeaPls.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RSS : ContentPage
+    public partial class LiveDataPage : ContentPage
     {
-        public RSS()
+  
+        public LiveDataPage()
         {
-            Title = "Feed";
             InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
+            BindingContext = this;
         }
     }
 }
