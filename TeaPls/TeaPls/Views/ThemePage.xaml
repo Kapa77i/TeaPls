@@ -24,7 +24,7 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Switch x:Name="mySwitch" Toggled="OnSwitchToggled" Grid.Row="0" Grid.Column="1" OnColor="{StaticResource TextColorDark}"/>
-                            <Label x:Name="switchLabel" Text="Night mod: " Grid.Row="0" Grid.Column="0" TextColor="{StaticResource TextColorDark}"/>
+                            <Label x:Name="switchLabel" Text="Night mod: " FontSize="16" Grid.Row="0" Grid.Column="0" TextColor="{StaticResource TextColorDark}"/>
                         </Grid>
                     </StackLayout>
                 </Frame>

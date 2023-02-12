@@ -4,8 +4,9 @@
 # Visual Studio (>=2015) project-specific, machine local files
 .vs/
 /TeaPls/TeaPls.Android/bin
+/TeaPls/TeaPls.Android/obj
 /TeaPls/TeaPls/bin
-
+/TeaPls/TeaPls/obj
 # User-specific files
 *.suo
 *.user
