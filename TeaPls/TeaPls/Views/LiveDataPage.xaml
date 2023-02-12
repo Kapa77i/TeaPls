@@ -1,14 +1,127 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TeaPls.Views.LiveDataPage" 
+<ContentPage x:Class="TeaPls.Views.LiveDataPage" 
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:TeaPls.ViewModels"
+             xmlns:local="clr-namespace:TeaPls.ViewModels"  
+             xmlns:model="clr-namespace:TeaPls.Models"
+             x:DataType="viewmodels:LiveDataViewModel"
+             x:Name="RSS"
+    
              Title="Feed"
+          
         BackgroundColor="{AppThemeBinding Dark={StaticResource BackGroundColorDark}, Light={StaticResource BackGroundColorLight}}">
 
-    <StackLayout Spacing="3" Padding="15">
+    <ContentPage.BindingContext>
+        <viewmodels:LiveDataViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <ListView
+        BackgroundColor="Transparent"
+        CachingStrategy="RecycleElement"
+        HasUnevenRows="True"
+        IsPullToRefreshEnabled="True"
+        IsRefreshing="{Binding IsBusy,Mode=OneWay}"
+        ItemsSource="{Binding Tea}"
+        RefreshCommand="{Binding RefreshCommand}"
+        RefreshControlColor="Red"
+        SelectionMode="None"
+        SeparatorVisibility="None">
+        <ListView.ItemTemplate>
+            <DataTemplate 
+                x:DataType="model:Tea">
+                <ViewCell>
+                    <ViewCell.ContextActions>
+                        <MenuItem
+                            Command="{Binding Source={x:Reference LiveDataPage}}"
+                            CommandParameter="{Binding .}"
+                            IsDestructive="True"
+                            Text="Delete"/>
+                    </ViewCell.ContextActions>
+                    <Grid Padding="10">
+                        <Frame CornerRadius="20" HasShadow="True">
+                            <StackLayout VerticalOptions="Center">
+                                <Label
+                                    FontSize="Large"
+                                    Text="{Binding Text}"
+                                    VerticalOptions="Center"/>
+                                <Label
+                                    FontSize="Large"
+                                    Text="{Binding Description}"
+                                    VerticalOptions="Center"/>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    
+    
+    
+    <!--<RefreshView x:DataType="local:LiveDataViewModel" 
+                 Command="{Binding RefreshCommand}" 
+                 IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
+                 >
+                 
+        <CollectionView x:Name="LiveDataView"
+                ItemsSource="{Binding Tea}"
+                SelectionMode="None"
+                >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout  Padding="30,24,30,24" Spacing="10" x:DataType="model:Tea">
+                        <Frame CornerRadius="12" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="30,24,30,24">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Text="{Binding Text}" 
+                                    Grid.Row="0"
+                                    LineBreakMode="NoWrap" 
+                                    Style="{DynamicResource ListItemTextStyle}" 
+                                    FontSize="16"
+                                    TextColor="{StaticResource TextColorDark}"/>
+
+                                <Label Text="{Binding Description}" 
+                                    Grid.Row="1"
+                                    LineBreakMode="NoWrap"
+                                    Style="{DynamicResource ListItemDetailTextStyle}"
+                                    FontSize="13"
+                                    TextColor="{StaticResource TextColorDark}"/>
+                            </Grid>
+
+                        </Frame>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                NumberOfTapsRequired="1"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:LiveDataViewModel}}, Path=ItemTapped}"		
+                                CommandParameter="{Binding .}">
+                            </TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>-->
+
+    <!--<StackLayout Spacing="3" Padding="15">
         <Frame CornerRadius="12" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="20,24,20,24">
             <Grid>
-                <Label Text="TÄHÄN JOTAKIN STN" 
+                <Label Text="{Binding Text}"
+                   FontAttributes="Bold" 
+                   FontSize="Large" 
+                   HorizontalOptions="CenterAndExpand" 
+                   VerticalOptions="CenterAndExpand"
+                       TextColor="{StaticResource TextColorDark}"/>
+                <Label Text="{Binding }" 
                    FontAttributes="Bold" 
                    FontSize="Large" 
                    HorizontalOptions="CenterAndExpand" 
@@ -16,6 +129,6 @@
                        TextColor="{StaticResource TextColorDark}"/>
             </Grid>
         </Frame>
-    </StackLayout>
+    </StackLayout>-->
 
 </ContentPage>
