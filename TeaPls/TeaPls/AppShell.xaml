@@ -4,7 +4,7 @@
        xmlns:local="clr-namespace:TeaPls.Views"
        Title="TeaPls"
        x:Class="TeaPls.AppShell"
-       FlyoutBackgroundColor="{AppThemeBinding Dark={StaticResource BackGroundColorDark}, Light={StaticResource BackGroundColorLight}}">
+       FlyoutBackgroundColor="#1666a6">
 
     <!--
         The overall app visual hierarchy is defined here, along with navigation.

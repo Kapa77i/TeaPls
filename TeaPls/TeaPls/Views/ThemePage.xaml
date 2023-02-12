@@ -23,8 +23,8 @@
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Switch x:Name="mySwitch" Toggled="OnSwitchToggled" Grid.Row="0" Grid.Column="1"/>
-                            <Label x:Name="switchLabel" Text="Night mod: " Grid.Row="0" Grid.Column="0"/>
+                            <Switch x:Name="mySwitch" Toggled="OnSwitchToggled" Grid.Row="0" Grid.Column="1" OnColor="Orange"/>
+                            <Label x:Name="switchLabel" Text="Night mod: " Grid.Row="0" Grid.Column="0" TextColor="{StaticResource TextColorDark}"/>
                         </Grid>
                     </StackLayout>
                 </Frame>   
