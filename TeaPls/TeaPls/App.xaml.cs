@@ -1,8 +1,5 @@
-﻿using System;
-using TeaPls.Services;
-using TeaPls.Views;
+﻿using TeaPls.Services;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace TeaPls
 {

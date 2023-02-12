@@ -1,10 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using Android.Runtime;
 using Plugin.Media;
-using Android.Views;
-using Android.Widget;
 
 namespace TeaPls.Droid
 {
