@@ -6,22 +6,34 @@
              Title="New Item"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true"
-            BackgroundColor="{AppThemeBinding Dark={StaticResource BackGroundColorDark}, Light={StaticResource BackGroundColorLight}}">
+             BackgroundColor="{AppThemeBinding Dark={StaticResource BackGroundColorDark}, Light={StaticResource BackGroundColorLight}}">
 
     <ContentPage.Content>
         <StackLayout Spacing="3" Padding="15">
-            <Label Text="Text" FontSize="Medium" />
-            <Entry Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" />
-            <Label Text="Description" FontSize="Medium" />
-            <Editor Text="{Binding Description, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
-            <StackLayout Orientation="Horizontal">
-                <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
-                <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
-            </StackLayout>
-            <Button Text="Take a Photo"    
-                    x:Name="takePhoto"    
-                    BackgroundColor="Fuchsia"/>
-            <Image x:Name="image"/>
+            <Frame CornerRadius="12" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="20,24,20,24">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.ColumnSpan="2" Text="Text" FontSize="Medium" TextColor="{StaticResource TextColorDark}"/>
+                    <Entry Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" TextColor="{StaticResource TextColorDark}"/>
+                    <Label Grid.Row="2" Grid.ColumnSpan="2" Text="Description" FontSize="Medium" TextColor="{StaticResource TextColorDark}"/>
+                    <Editor Grid.Row="3" Grid.ColumnSpan="2" Text="{Binding Description, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" TextColor="{StaticResource TextColorDark}"/>
+                    <Button Grid.Row="4" Grid.Column="0" Text="Cancel" Command="{Binding CancelCommand}" />
+                    <Button Grid.Row="4" Grid.Column="1" Text="Save" Command="{Binding SaveCommand}" />
+                    <Button Grid.Row="5" Grid.ColumnSpan="2" Text="Take a Photo" x:Name="takePhoto" BackgroundColor="Fuchsia"/>
+                    <Image Grid.Row="6" Grid.ColumnSpan="2" x:Name="image"/>
+                </Grid>
+            </Frame>
+
         </StackLayout>
     </ContentPage.Content>
 

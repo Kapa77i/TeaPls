@@ -22,14 +22,29 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="10" x:DataType="model:Item">
-                        <Label Text="{Binding Text}" 
-                            LineBreakMode="NoWrap" 
-                            Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="16" />
-                        <Label Text="{Binding Description}" 
-                            LineBreakMode="NoWrap"
-                            Style="{DynamicResource ListItemDetailTextStyle}"
-                            FontSize="13" />
+                        <Frame CornerRadius="12" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="30,24,30,24">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Text="{Binding Text}" 
+        Grid.Row="0"
+        LineBreakMode="NoWrap" 
+        Style="{DynamicResource ListItemTextStyle}" 
+        FontSize="16"
+        TextColor="{StaticResource TextColorDark}"/>
+
+                                <Label Text="{Binding Description}" 
+        Grid.Row="1"
+        LineBreakMode="NoWrap"
+        Style="{DynamicResource ListItemDetailTextStyle}"
+        FontSize="13"
+        TextColor="{StaticResource TextColorDark}"/>
+                            </Grid>
+
+                        </Frame>
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer 
                                 NumberOfTapsRequired="1"
@@ -37,6 +52,7 @@
                                 CommandParameter="{Binding .}">
                             </TapGestureRecognizer>
                         </StackLayout.GestureRecognizers>
+
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
