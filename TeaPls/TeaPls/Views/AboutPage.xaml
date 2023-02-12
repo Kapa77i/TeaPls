@@ -17,13 +17,13 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <!--<StackLayout>
+        <StackLayout>
             <StackLayout >
                 <ContentView >
                     <Image Source="xamarin_logo.png"  />
                 </ContentView>
             </StackLayout>
-        </StackLayout>-->
+        </StackLayout>
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
 
