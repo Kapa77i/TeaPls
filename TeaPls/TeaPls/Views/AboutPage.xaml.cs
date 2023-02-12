@@ -29,8 +29,9 @@ namespace TeaPls.Views
             int RandomColor = random.Next(0, colors.Length);
             int RandomAdjective = random.Next(0, adjectives.Length);
             //muodostetaan noilla randomeilla uusi tee ja syötetään se frinttiin HotTea nimiseen elementtiin "frontissa".
-            randomTea.Text = $"{adjectives[RandomAdjective]} {colors[RandomColor]} Tea.";
-            randomBrand.Text = $"{brands[RandomBrand]}";
+            randomBrand.Text = $"Brand: {brands[RandomBrand]}";
+            randomTea.Text = $"Product: {adjectives[RandomAdjective]} {colors[RandomColor]} Tea.";
+
         }
 
     }
