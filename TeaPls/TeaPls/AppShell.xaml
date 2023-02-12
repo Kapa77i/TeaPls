@@ -48,7 +48,7 @@
                             </VisualState>
                             <VisualState x:Name="Selected">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource BackGroundColorLight}, Light={StaticResource BackGroundColorDark}}" />
+                                    <Setter Property="BackgroundColor" Value="#1b7dcc"  />
                                 </VisualState.Setters>
                             </VisualState>
                         </VisualStateGroup>

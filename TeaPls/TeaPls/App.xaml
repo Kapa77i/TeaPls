@@ -12,8 +12,9 @@
             <Color x:Key="Primary">Orange</Color>
             <Color x:Key="RefresColor">Orange</Color>
             <Color x:Key="TextColorDark">Orange</Color>
-            <Color x:Key="BackGroundColorLight">#caf0f8</Color>
-            <Color x:Key="BackGroundColorDark">#0077b6</Color>
+            <Color x:Key="TextColorLight">black</Color>
+            <Color x:Key="BackGroundColorLight">#ffffff</Color>
+            <Color x:Key="BackGroundColorDark">#000</Color>
             <Color x:Key="GridBackGroundColor">#1666a6</Color>
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="White"></Setter>

@@ -8,7 +8,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
-        </Grid.RowDefinitions>  
+        </Grid.RowDefinitions>
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
 
@@ -23,12 +23,12 @@
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Switch x:Name="mySwitch" Toggled="OnSwitchToggled" Grid.Row="0" Grid.Column="1" OnColor="Orange"/>
+                            <Switch x:Name="mySwitch" Toggled="OnSwitchToggled" Grid.Row="0" Grid.Column="1" OnColor="{StaticResource TextColorDark}"/>
                             <Label x:Name="switchLabel" Text="Night mod: " Grid.Row="0" Grid.Column="0" TextColor="{StaticResource TextColorDark}"/>
                         </Grid>
                     </StackLayout>
-                </Frame>   
+                </Frame>
             </StackLayout>
         </ScrollView>
-    </Grid>    
+    </Grid>
 </ContentPage>
