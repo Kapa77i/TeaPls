@@ -30,6 +30,11 @@ namespace TeaPls.Views
             };
 
         }
+
+        void Map_MapClicked(System.Object sender, Xamarin.Forms.Maps.MapClickedEventArgs e)
+        {
+            DisplayAlert("Coordinates", $"Lat: {e.Position.Latitude}, Long: {e.Position.Longitude}", "OK");
+        }
         async Task TakePhotoAsync()
         {
             try

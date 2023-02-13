@@ -4,7 +4,7 @@
              x:Class="TeaPls.Views.NewItemPage"
              Shell.PresentationMode="ModalAnimated"
              Title="New Item"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              ios:Page.UseSafeArea="true"
              BackgroundColor="{AppThemeBinding Dark={StaticResource BackGroundColorDark}, Light={StaticResource BackGroundColorLight}}">
 
@@ -31,6 +31,7 @@
                     <Button Grid.Row="4" Grid.Column="1" Text="Save" Command="{Binding SaveCommand}"/>
                     <Button Grid.Row="5" Grid.ColumnSpan="2" Text="Take a Photo" x:Name="takePhoto" BackgroundColor="Fuchsia"/>
                     <Image Grid.Row="6" Grid.ColumnSpan="2" x:Name="image"/>
+                    <maps:Map IsShowingUser="True" MapClicked="Map_MapClicked" />
                 </Grid>
             </Frame>
 
