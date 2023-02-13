@@ -20,7 +20,7 @@
         <ToolbarItem Text="Add" Command="{Binding AddCommand}" Clicked="Button_ClickedAsync" Icon="icon_add.png" />
     </ContentPage.ToolbarItems>
 
-    <StackLayout Margin="20,35,20,20">
+    <StackLayout >
         <CollectionView x:Name="LiveDataListView">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
