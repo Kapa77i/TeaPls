@@ -36,14 +36,6 @@ namespace TeaPls.Services
             db = new SQLiteAsyncConnection(databasePath);
 
             await db.CreateTableAsync<Tea>();
-
-            var stock = new Tea()
-            {
-                Text = "Testitee DB",
-                Description = "Ensimmäinen testi tee, joka menee DB"
-            };
-
-            await db.InsertAsync(stock);
         }
 
         public static async Task AddTea(string text, string description)

@@ -48,7 +48,6 @@ namespace TeaPls.Views
         }
 
 
-
         async Task Add()
         {
             var text = await App.Current.MainPage.DisplayPromptAsync("Text", "Name of Tea");
