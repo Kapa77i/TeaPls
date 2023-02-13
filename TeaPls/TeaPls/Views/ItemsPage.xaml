@@ -22,7 +22,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout  Orientation="Vertical" Padding="10,10,10,10"  x:DataType="model:Item">
-                        <Frame CornerRadius="12" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="25,25,25,25" BorderColor="orange" HasShadow="False" >
+                        <Frame CornerRadius="20" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="25,25,25,25" BorderColor="orange" HasShadow="False" >
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
@@ -33,14 +33,14 @@
         Grid.Row="0"
         LineBreakMode="NoWrap" 
         Style="{DynamicResource ListItemTextStyle}" 
-        FontSize="16"
+        FontSize="20"
         TextColor="{StaticResource TextColorDark}"/>
 
                                 <Label Text="{Binding Description}" 
         Grid.Row="1"
         LineBreakMode="NoWrap"
         Style="{DynamicResource ListItemDetailTextStyle}"
-        FontSize="13"
+        FontSize="16"
         TextColor="{StaticResource TextColorDark}"/>
                             </Grid>
 

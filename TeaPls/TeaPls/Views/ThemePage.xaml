@@ -12,7 +12,7 @@
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="10,10,10,10">
 
-                <Frame CornerRadius="12" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="25,25,25,25" BorderColor="orange"  HasShadow="False">
+                <Frame CornerRadius="20" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="25,25,25,25" BorderColor="orange"  HasShadow="False">
                     <StackLayout Orientation="Vertical" Padding="10,10,10,10">
                         <Grid>
                             <Grid.RowDefinitions>
@@ -24,7 +24,7 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Switch x:Name="mySwitch" Toggled="OnSwitchToggled" Grid.Row="0" Grid.Column="1" OnColor="{StaticResource TextColorDark}"/>
-                            <Label x:Name="switchLabel" Text="Night mod: " FontSize="16" Grid.Row="0" Grid.Column="0" TextColor="{StaticResource TextColorDark}"/>
+                            <Label x:Name="switchLabel" Text="Night mode: " FontSize="20" Grid.Row="0" Grid.Column="0" TextColor="{StaticResource TextColorDark}"/>
                         </Grid>
                     </StackLayout>
                 </Frame>

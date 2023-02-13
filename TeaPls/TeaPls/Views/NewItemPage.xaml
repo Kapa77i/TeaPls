@@ -10,7 +10,7 @@
 
     <ContentPage.Content>
         <StackLayout  Padding="30,24,30,24" Spacing="10">
-            <Frame CornerRadius="12" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="25,25,25,25" BorderColor="orange"  HasShadow="False">
+            <Frame CornerRadius="20" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="25,25,25,25" BorderColor="orange"  HasShadow="False">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
