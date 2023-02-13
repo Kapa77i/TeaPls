@@ -25,10 +25,10 @@
             </StackLayout>
         </StackLayout>
         <ScrollView Grid.Row="1">
-            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+            <StackLayout Orientation="Vertical" Padding="10,10,10,10">
 
 
-                <Frame CornerRadius="12" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="30,24,30,24">
+                <Frame CornerRadius="12" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="25,25,25,25" BorderColor="orange"  HasShadow="False">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
@@ -47,7 +47,7 @@
 
 
 
-                <Frame CornerRadius="12" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="30,24,30,24">
+                <Frame CornerRadius="12" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="25,25,25,25" BorderColor="orange"  HasShadow="False">
                     <StackLayout Orientation="Vertical">
                         <Grid >
                             <Grid.RowDefinitions>

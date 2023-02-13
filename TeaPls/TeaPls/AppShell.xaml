@@ -17,10 +17,11 @@
             <Style x:Key="BaseStyle" TargetType="Element">
                 <Setter Property="Shell.BackgroundColor" Value="#1666a6" />
                 <Setter Property="Shell.ForegroundColor" Value="Orange" />
-                
+
                 <Setter Property="Shell.TitleColor" Value="Orange" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+
                 <Setter Property="Shell.TabBarBackgroundColor" Value="Orange" />
                 <Setter Property="Shell.TabBarForegroundColor" Value="#1f1c18"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>

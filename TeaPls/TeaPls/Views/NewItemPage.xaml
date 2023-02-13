@@ -10,7 +10,7 @@
 
     <ContentPage.Content>
         <StackLayout  Padding="30,24,30,24" Spacing="10">
-            <Frame CornerRadius="12" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="20,24,20,24">
+            <Frame CornerRadius="12" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="25,25,25,25" BorderColor="orange"  HasShadow="False">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
@@ -28,7 +28,7 @@
                     <Label Grid.Row="2" Grid.ColumnSpan="2" Text="Description" FontSize="Medium" TextColor="{StaticResource TextColorDark}"/>
                     <Editor Grid.Row="3" Grid.ColumnSpan="2" Text="{Binding Description, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" TextColor="{StaticResource TextColorDark}"/>
                     <Button Grid.Row="4" Grid.Column="0" Text="Cancel" Command="{Binding CancelCommand}" />
-                    <Button Grid.Row="4" Grid.Column="1" Text="Save" Command="{Binding SaveCommand}" />
+                    <Button Grid.Row="4" Grid.Column="1" Text="Save" Command="{Binding SaveCommand}"/>
                     <Button Grid.Row="5" Grid.ColumnSpan="2" Text="Take a Photo" x:Name="takePhoto" BackgroundColor="Fuchsia"/>
                     <Image Grid.Row="6" Grid.ColumnSpan="2" x:Name="image"/>
                 </Grid>
