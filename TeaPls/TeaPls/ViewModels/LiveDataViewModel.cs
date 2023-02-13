@@ -26,58 +26,55 @@ namespace TeaPls.ViewModels
 
         public LiveDataViewModel()
         {
-            Title = "Sekoilua";
+            //Title = "Sekoilua";
 
-            Tea = new ObservableRangeCollection<Tea>();
+            //Tea = new ObservableRangeCollection<Tea>();
 
-            LoadCommand = new AsyncCommand(GetAllTeas);
+            //LoadCommand = new AsyncCommand(GetAllTeas);
 
 
-            RefreshCommand = new AsyncCommand(Refresh);
-            AddCommand = new AsyncCommand(Add);
-            RemoveCommand = new AsyncCommand<Tea>(Remove);
+            //RefreshCommand = new AsyncCommand(Refresh);
+            //AddCommand = new AsyncCommand(Add);
+            //RemoveCommand = new AsyncCommand<Tea>(Remove);
         }
 
-        async Task GetAllTeas()
-        {
-            await TeaService.GetTeas();
-            await Refresh();
-        }
+        //async Task GetAllTeas()
+        //{
+        //    await TeaService.GetTeas();
+        //    await Refresh();
+        //}
 
-        public void OnAppearing()
-        {
-            IsBusy = true;
-        }
+        //public void OnAppearing()
+        //{
+        //    IsBusy = true;
+        //}
 
-        async Task Add()
-        {
-            var text = await App.Current.MainPage.DisplayPromptAsync("Text", "Name of Tea");
-            var description = await App.Current.MainPage.DisplayPromptAsync("Description", "Tell me about this tea");
-            await TeaService.AddTea(text, description);
-            await Refresh();
+        //async Task Add()
+        //{
+        //    var text = await App.Current.MainPage.DisplayPromptAsync("Text", "Name of Tea");
+        //    var description = await App.Current.MainPage.DisplayPromptAsync("Description", "Tell me about this tea");
+        //    await TeaService.AddTea(text, description);
+        //    await Refresh();
 
-            //var route = $"{nameof(ItemDetailPage)}?Name=Motz";
-            //await Shell.Current.GoToAsync(route);
-        }
+        //    //var route = $"{nameof(ItemDetailPage)}?Name=Motz";
+        //    //await Shell.Current.GoToAsync(route);
+        //}
 
-        async Task Remove(Tea tea)
-        {
-            await TeaService.RemoveTea(tea.Id);
-            await Refresh();
-        }
+        //async Task Remove(Tea tea)
+        //{
+        //    await TeaService.RemoveTea(tea.Id);
+        //    await Refresh();
+        //}
 
-        async Task Refresh()
-        {
-            IsBusy = true;
-            await Task.Delay(2000);
-            Tea.Clear();
-            var teas = await TeaService.GetTeas();
-            Tea.AddRange(teas);
-            IsBusy = false;
-        }
-
-
-
+        //async Task Refresh()
+        //{
+        //    IsBusy = true;
+        //    await Task.Delay(2000);
+        //    Tea.Clear();
+        //    var teas = await TeaService.GetTeas();
+        //    Tea.AddRange(teas);
+        //    IsBusy = false;
+        //}
       
     }
 }
