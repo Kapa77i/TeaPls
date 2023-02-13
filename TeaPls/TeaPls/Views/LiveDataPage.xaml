@@ -17,119 +17,39 @@
     </ContentPage.BindingContext>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Command="{Binding AddCommand}" />
+        <ToolbarItem Text="Add" Command="{Binding AddCommand}" Clicked="Button_ClickedAsync" />
     </ContentPage.ToolbarItems>
-    <StackLayout Orientation="Vertical" Padding="10,10,10,10">
-        <Frame CornerRadius="20" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="25,25,25,25" BorderColor="orange"  HasShadow="False">
-        <ListView
-        BackgroundColor="Transparent"
-        CachingStrategy="RecycleElement"
-        HasUnevenRows="True"
-        IsPullToRefreshEnabled="True"
-        IsRefreshing="{Binding IsBusy,Mode=OneWay}"
-        ItemsSource="{Binding Tea}"
-        RefreshCommand="{Binding RefreshCommand}"
-        RefreshControlColor="Red"
-        SelectionMode="None"
-        SeparatorVisibility="None">
-        <ListView.ItemTemplate>
-            <DataTemplate 
-                x:DataType="model:Tea">
-                <ViewCell>
-                    <ViewCell.ContextActions>
-                        <MenuItem
-                            Command="{Binding Source={x:Reference LiveDataPage}}"
-                            CommandParameter="{Binding .}"
-                            IsDestructive="True"
-                            Text="Delete"/>
-                    </ViewCell.ContextActions>
-                    <Grid Padding="10">
-                        <Frame CornerRadius="20" HasShadow="True">
-                            <StackLayout VerticalOptions="Center">
-                                <Label
-                                    FontSize="Large"
-                                    Text="{Binding Text}"
-                                    VerticalOptions="Center"/>
-                                <Label
-                                    FontSize="Large"
-                                    Text="{Binding Description}"
-                                    VerticalOptions="Center"/>
-                            </StackLayout>
-                        </Frame>
-                    </Grid>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
-        </Frame>
-    </StackLayout>
 
-    <!--<RefreshView x:DataType="local:LiveDataViewModel" 
-                 Command="{Binding RefreshCommand}" 
-                 IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
-                 >
-                 
-        <CollectionView x:Name="LiveDataView"
-                ItemsSource="{Binding Tea}"
-                SelectionMode="None"
-                >
+    <StackLayout Margin="20,35,20,20">
+        <CollectionView x:Name="LiveDataListView">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout  Padding="30,24,30,24" Spacing="10" x:DataType="model:Tea">
-                        <Frame CornerRadius="20" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="30,24,30,24">
+                    <StackLayout
+                       Orientation="Vertical" Padding="10,10,10,10" x:DataType="model:Tea">
+                        <Frame CornerRadius="20" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="25,25,25,25" BorderColor="orange" HasShadow="False" >
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
+                                <Label Text="{Binding Text}"
+                                Grid.Row="0"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="20"
+                                TextColor="{StaticResource TextColorDark}"/>
 
-                                <Label Text="{Binding Text}" 
-                                    Grid.Row="0"
-                                    LineBreakMode="NoWrap" 
-                                    Style="{DynamicResource ListItemTextStyle}" 
-                                    FontSize="16"
-                                    TextColor="{StaticResource TextColorDark}"/>
-
-                                <Label Text="{Binding Description}" 
-                                    Grid.Row="1"
-                                    LineBreakMode="NoWrap"
-                                    Style="{DynamicResource ListItemDetailTextStyle}"
-                                    FontSize="13"
-                                    TextColor="{StaticResource TextColorDark}"/>
+                                <Label Text="{Binding Description}"
+                                Grid.Row="1"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemDetailTextStyle}" 
+                                FontSize="16"
+                                TextColor="{StaticResource TextColorDark}"/>
                             </Grid>
-
                         </Frame>
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer 
-                                NumberOfTapsRequired="1"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:LiveDataViewModel}}, Path=ItemTapped}"		
-                                CommandParameter="{Binding .}">
-                            </TapGestureRecognizer>
-                        </StackLayout.GestureRecognizers>
-
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-    </RefreshView>-->
-
-    <!--<StackLayout Spacing="3" Padding="15">
-        <Frame CornerRadius="20" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="20,24,20,24">
-            <Grid>
-                <Label Text="{Binding Text}"
-                   FontAttributes="Bold" 
-                   FontSize="Large" 
-                   HorizontalOptions="CenterAndExpand" 
-                   VerticalOptions="CenterAndExpand"
-                       TextColor="{StaticResource TextColorDark}"/>
-                <Label Text="{Binding }" 
-                   FontAttributes="Bold" 
-                   FontSize="Large" 
-                   HorizontalOptions="CenterAndExpand" 
-                   VerticalOptions="CenterAndExpand"
-                       TextColor="{StaticResource TextColorDark}"/>
-            </Grid>
-        </Frame>
-    </StackLayout>-->
-
+    </StackLayout>
 </ContentPage>

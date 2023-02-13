@@ -20,8 +20,9 @@ namespace TeaPls.ViewModels
         public ObservableRangeCollection<Tea> Tea { get; set; }
         public AsyncCommand RefreshCommand { get; set; }
         public AsyncCommand AddCommand { get; set; }
+        public AsyncCommand LoadCommand { get; set; }
         public AsyncCommand<Tea> RemoveCommand { get; set; }
-        
+
 
         public LiveDataViewModel()
         {
@@ -29,12 +30,24 @@ namespace TeaPls.ViewModels
 
             Tea = new ObservableRangeCollection<Tea>();
 
+            LoadCommand = new AsyncCommand(GetAllTeas);
+
 
             RefreshCommand = new AsyncCommand(Refresh);
             AddCommand = new AsyncCommand(Add);
             RemoveCommand = new AsyncCommand<Tea>(Remove);
         }
 
+        async Task GetAllTeas()
+        {
+            await TeaService.GetTeas();
+            await Refresh();
+        }
+
+        public void OnAppearing()
+        {
+            IsBusy = true;
+        }
 
         async Task Add()
         {
@@ -47,7 +60,7 @@ namespace TeaPls.ViewModels
             //await Shell.Current.GoToAsync(route);
         }
 
-        async Task Remove (Tea tea)
+        async Task Remove(Tea tea)
         {
             await TeaService.RemoveTea(tea.Id);
             await Refresh();
@@ -62,6 +75,9 @@ namespace TeaPls.ViewModels
             Tea.AddRange(teas);
             IsBusy = false;
         }
-    }
 
+
+
+      
+    }
 }
