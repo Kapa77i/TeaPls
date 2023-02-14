@@ -21,14 +21,19 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <maps:Map IsShowingUser="True" MapClicked="Map_MapClicked" Grid.Row="0" Grid.ColumnSpan="2"/>
-                    <Label Grid.Row="1" Grid.ColumnSpan="2" Text="Text" FontSize="Medium" TextColor="{StaticResource TextColorDark}" />
+                    <Label Grid.Row="1" Grid.ColumnSpan="1" Text="Text" FontSize="Medium" TextColor="{StaticResource TextColorDark}" />
                     <Entry Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" TextColor="{StaticResource TextColorDark}" />
-                    <Label Grid.Row="3" Grid.ColumnSpan="2" Text="Description" FontSize="Medium" TextColor="{StaticResource TextColorDark}" />
+                    <Label Grid.Row="3" Grid.ColumnSpan="1" Text="Description" FontSize="Medium" TextColor="{StaticResource TextColorDark}" />
                     <Editor Grid.Row="4" Grid.ColumnSpan="2" Text="{Binding Description, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" TextColor="{StaticResource TextColorDark}" />
-                    <Button Grid.Row="5" Grid.Column="0" Text="Cancel" TextColor="#1666a6" Command="{Binding CancelCommand}" FontSize="16" CornerRadius="15" />
+
+                    <Button Grid.Row="5" Grid.Column="0" Text="Take a Photo" TextColor="#1666a6"  x:Name="takePhoto" BackgroundColor="Fuchsia" FontSize="16" CornerRadius="15" />
                     <Button Grid.Row="5" Grid.Column="1" Text="Save" TextColor="Orange" Command="{Binding SaveCommand}"  FontSize="16" CornerRadius="15" />
-                    <Button Grid.Row="6" Grid.ColumnSpan="2" Text="Take a Photo" TextColor="#1666a6"  x:Name="takePhoto" BackgroundColor="Fuchsia" FontSize="16" CornerRadius="15" />
-                    <Image Grid.Row="7" Grid.ColumnSpan="2" x:Name="image" />
+
+                    <Image Grid.Row="6" Grid.ColumnSpan="1" x:Name="image" />
+
+                    <Button Grid.Row="7"  Text="Cancel" TextColor="#1666a6" Command="{Binding CancelCommand}" FontSize="16" CornerRadius="15" />
+
+                
                 </Grid>
 
             </Frame>
