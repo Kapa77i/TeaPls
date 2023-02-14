@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             
              x:Class="TeaPls.Views.NewItemPage"
              Shell.PresentationMode="ModalAnimated"
-             Title="New Item"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
-             ios:Page.UseSafeArea="true"
-             BackgroundColor="{AppThemeBinding Dark={StaticResource BackGroundColorDark}, Light={StaticResource BackGroundColorLight}}">
+             Title="New Item"         
+             BackgroundColor="{AppThemeBinding Dark={StaticResource BackGroundColorDark}, Light={StaticResource BackGroundColorLight}}"
+>
 
     <ContentPage.Content>
         <StackLayout Padding="10,10,10,10">
@@ -20,7 +21,8 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <maps:Map IsShowingUser="True" MapClicked="Map_MapClicked" Grid.Row="0" Grid.ColumnSpan="2"/>
+                    <!--ColumnSpan = leveys, rowSpan = korkeus-->
+
                     <Label Grid.Row="1" Grid.ColumnSpan="1" Text="Text" FontSize="Medium" TextColor="{StaticResource TextColorDark}" />
                     <Entry Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" TextColor="{StaticResource TextColorDark}" />
                     <Label Grid.Row="3" Grid.ColumnSpan="1" Text="Description" FontSize="Medium" TextColor="{StaticResource TextColorDark}" />
@@ -33,7 +35,7 @@
 
                     <Button Grid.Row="7"  Text="Cancel" TextColor="#1666a6" Command="{Binding CancelCommand}" FontSize="16" CornerRadius="15" />
 
-                
+                    <maps:Map Grid.Row="8" IsShowingUser="True" MapClicked="Map_MapClicked"  Grid.ColumnSpan="2" Grid.RowSpan="5" MapType="Street" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
                 </Grid>
 
             </Frame>
