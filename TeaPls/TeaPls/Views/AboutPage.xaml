@@ -25,6 +25,8 @@
             </StackLayout>
         </StackLayout>
         <ScrollView Grid.Row="1">
+            
+            
             <StackLayout Orientation="Vertical" Padding="10,10,10,10">
 
 
@@ -35,23 +37,26 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <StackLayout Grid.Row="0">
-                            <Image Source="janne.png" />
-                            <Label 
-         FontSize="20" 
-         TextColor="{StaticResource TextColorDark}"  
-         Text="Tea Aforism of the day:" />
+                            <Label FontSize="20" HorizontalTextAlignment="Center"  TextColor="{StaticResource TextColorDark}" Text="Welcome to TeaPlease app!" />
                         </StackLayout>
-                        
-                        <Label Grid.Row="1" FontSize="16" Text="0" 
-                               x:Name="randomIdAforism" TextColor="{StaticResource TextColorDark}" IsVisible="false"/>
-                        
-                        <Label Grid.Row="2" FontSize="16" Text="Random person?" 
-                               x:Name="randomPerson" TextColor="{StaticResource TextColorDark}" />
+                    </Grid>
+                </Frame>
 
-                        <Label Grid.Row="3" FontSize="16" Text="Did you know that drinking tea can reduce a person's happiness by up to 100%?" 
-                               x:Name="randomAforims" TextColor="{StaticResource TextColorDark}" />
 
-                        <Button Grid.Row="4"  FontSize="16"  TextColor="#1666a6" CornerRadius="15" Text="Give me a new aforism" Clicked="Button_Clicked" />
+                <Frame CornerRadius="20" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="25,25,25,25" BorderColor="orange"  HasShadow="False">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <StackLayout Grid.Row="0">
+                            <Image Source="janne.png" />
+                            <Label FontSize="20"  TextColor="{StaticResource TextColorDark}" Text="Tea Aforism of the day:" />
+                            <Label Grid.Row="4" FontSize="16" Text="0" x:Name="randomIdAforism" TextColor="{StaticResource TextColorDark}" IsVisible="false"/>
+                            <Label Grid.Row="2" FontSize="16" Text="Unknown Author" x:Name="randomPerson" TextColor="{StaticResource TextColorDark}" />
+                            <Label Grid.Row="3" FontSize="16" Text="Did you know that drinking tea can reduce a person's happiness by up to 100%?" x:Name="randomAforims" TextColor="{StaticResource TextColorDark}" />
+                        </StackLayout>
+                        <Button Grid.Row="2" FontSize="16"  TextColor="#1666a6" CornerRadius="15" Text="Give me a new aforism" Clicked="Button_Clicked" />
                     </Grid>
                 </Frame>
 
