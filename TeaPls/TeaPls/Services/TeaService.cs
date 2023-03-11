@@ -25,10 +25,10 @@ namespace TeaPls.Services
 
         static async Task Init()
         {
-            if (db != null)
-            {
-                return;
-            }
+            //if (db != null)
+            //{
+            //    return;
+            //}
 
             // Reiti databaseen
             var databasePath = Path.Combine(FileSystem.AppDataDirectory, "MyData.db");
@@ -56,11 +56,21 @@ namespace TeaPls.Services
 
         }
 
+  
+
         public static async Task<int> DeleteTea(Tea tea)
         {
             return await db.DeleteAsync(tea);
 
         }
+
+
+        public static async Task<int>UpdateTea(Tea tea)
+        {
+            return await db.UpdateAsync(tea);
+
+        }
+
 
         public static async Task<IEnumerable<Tea>> GetTeas()
         {

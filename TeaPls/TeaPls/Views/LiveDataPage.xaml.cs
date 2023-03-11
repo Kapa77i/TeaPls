@@ -74,6 +74,23 @@ namespace TeaPls.Views
             }
         }
 
+        async void SwipeItem_Invoked_2(object sender, EventArgs e)
+        {
+
+            var item = sender as SwipeItem;
+            var emp = item.CommandParameter as Tea;
+
+            var text = await App.Current.MainPage.DisplayPromptAsync("Aforism of the tea", "Update the Aforism name", initialValue: $"{emp.Text}");
+            var description = await App.Current.MainPage.DisplayPromptAsync("The Aforism", "Update the Aforism", initialValue: $"{emp.Description}");
+
+            emp.Text = text;
+            emp.Description = description;
+
+            await TeaService.UpdateTea(emp);
+            await Refresh();
+
+        }
+
         async Task Add()
         {
             var text = await App.Current.MainPage.DisplayPromptAsync("Aforism of the tea", "Name of Aforism");

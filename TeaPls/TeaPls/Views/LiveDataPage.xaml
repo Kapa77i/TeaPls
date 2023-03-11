@@ -7,61 +7,53 @@
              xmlns:model="clr-namespace:TeaPls.Models"
              x:DataType="viewmodels:LiveDataViewModel"
              x:Name="RSS"
-    
              Title="Tea Aforism"
-          
-        BackgroundColor="{AppThemeBinding Dark={StaticResource BackGroundColorDark}, Light={StaticResource BackGroundColorLight}}">
+             BackgroundColor="{AppThemeBinding Dark={StaticResource BackGroundColorDark}, Light={StaticResource BackGroundColorLight}}">
 
-    <ContentPage.BindingContext>
+    <!--<ContentPage.BindingContext>
         <viewmodels:LiveDataViewModel />
-    </ContentPage.BindingContext>
+    </ContentPage.BindingContext>-->
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddCommand}" Clicked="Button_ClickedAsync" Icon="icon_add.png" />
     </ContentPage.ToolbarItems>
 
-    <StackLayout >
-        <CollectionView x:Name="LiveDataListView"  x:DataType="model:Tea">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
 
-                     
-                        <SwipeView>
-                            <Frame CornerRadius="20" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="25,25,25,25" BorderColor="orange" HasShadow="False" >
-
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
-                                    </Grid.RowDefinitions>
-
-                                    <Label Text="{Binding Text}"
-                                           x:Name="textEntry"
-                                Grid.Row="0"
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="20"
-                                TextColor="{StaticResource TextColorDark}"/>
-                                    <Label Text="{Binding Description}"
-                                Grid.Row="1"
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemDetailTextStyle}" 
-                                FontSize="16"
-                                TextColor="{StaticResource TextColorDark}"/>
-                                </Grid>
-                            </Frame>
+            <CollectionView x:Name="LiveDataListView" x:DataType="model:Tea" SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        
+                            <StackLayout Orientation="Vertical" Padding="10,10,10,10"  x:DataType="model:Tea">
+                           
+                                    <Frame CornerRadius="20" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="25,25,25,25" BorderColor="orange" HasShadow="False">
+                        <SwipeView >
+                            <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Label Text="{Binding Text}" Grid.Row="0" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}"  FontSize="20" TextColor="{StaticResource TextColorDark}"/>
+                                            <Label Text="{Binding Description}"  Grid.Row="1" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="16" TextColor="{StaticResource TextColorDark}"/>
+                                             <Label Text="{Binding Id}"  Grid.Row="2" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="16" TextColor="{StaticResource TextColorDark}"/>
+                            </Grid>
                             <SwipeView.RightItems>
-                                <SwipeItems>
-                                    <SwipeItem Text ="Remove"
-                                           CommandParameter="{Binding .}"
-                                           Invoked="SwipeItem_Invoked"/>
+                                <SwipeItems >
+                                    <SwipeItem Text ="Remove" BackgroundColor="Red" CommandParameter="{Binding .}" Invoked="SwipeItem_Invoked"/>
                                 </SwipeItems>
                             </SwipeView.RightItems>
-                    </SwipeView>
+                            <SwipeView.LeftItems>
+                                <SwipeItems >
+                                    <SwipeItem Text ="Edit" BackgroundColor="Blue" CommandParameter="{Binding .}" Invoked="SwipeItem_Invoked_2"/>
+                                </SwipeItems>
+                            </SwipeView.LeftItems>
+                        </SwipeView>
+                    </Frame>
+                                   
+                </StackLayout>
+                         
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+ 
 
-                        
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </StackLayout>
 </ContentPage>

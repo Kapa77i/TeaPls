@@ -1,4 +1,6 @@
 ﻿using System;
+using TeaPls.Models;
+using TeaPls.Services;
 using Xamarin.Forms;
 
 namespace TeaPls.Views
@@ -34,5 +36,24 @@ namespace TeaPls.Views
 
         }
 
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+        
+            Random random = new Random();
+            int randomId = random.Next(19, 27);
+
+           while(randomId == int.Parse(randomIdAforism.Text))
+            {
+                randomId = random.Next(19, 27);
+            }
+
+            Tea tea = await TeaService.GetTea(randomId);
+
+            //randomIdAforims.Text = $"{tea.Id}";
+            randomPerson.Text = $"{tea.Text}";
+            randomAforims.Text = $"{tea.Description}";
+            
+
+        }
     }
 }
