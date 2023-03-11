@@ -22,6 +22,9 @@ namespace TeaPls.Views
         public AsyncCommand RefreshCommand { get; set; }
         public AsyncCommand AddCommand { get; set; }
         public AsyncCommand<Tea> RemoveCommand { get; set; }
+        public AsyncCommand<Tea> DeleteCommand { get; set; }
+        Tea _tea;
+
 
         public LiveDataPage()
         {
@@ -33,8 +36,18 @@ namespace TeaPls.Views
             RefreshCommand = new AsyncCommand(Refresh);
             AddCommand = new AsyncCommand(Add);
             RemoveCommand = new AsyncCommand<Tea>(Remove);
+            DeleteCommand = new AsyncCommand<Tea>(Delete);
 
         }
+
+        //public LiveDataPage(Tea tea)
+        //{
+        //    InitializeComponent();
+        //    BindingContext = this;
+
+
+        //}
+
 
         protected override async void OnAppearing()
         {
@@ -47,11 +60,24 @@ namespace TeaPls.Views
             AddCommand.ExecuteAsync();
         }
 
+        async void SwipeItem_Invoked(object sender, EventArgs e)
+        {
+
+            var item = sender as SwipeItem;
+            var emp = item.CommandParameter as Tea;
+            var result = await DisplayAlert("Delete", $"Delete {emp.Text} from Database?", "Yes", "No");
+
+            if (result)
+            {
+                await TeaService.DeleteTea(emp);
+                await Refresh();
+            }
+        }
 
         async Task Add()
         {
-            var text = await App.Current.MainPage.DisplayPromptAsync("Text", "Name of Tea");
-            var description = await App.Current.MainPage.DisplayPromptAsync("Description", "Tell me about this tea");
+            var text = await App.Current.MainPage.DisplayPromptAsync("Aforism of the tea", "Name of Aforism");
+            var description = await App.Current.MainPage.DisplayPromptAsync("The Aforism", "Tell me your aforism");
             await TeaService.AddTea(text, description);
             await Refresh();
 
@@ -62,6 +88,13 @@ namespace TeaPls.Views
         async Task Remove(Tea tea)
         {
             await TeaService.RemoveTea(tea.Id);
+            //await TeaService.RemoveTea(tea.Id);
+            await Refresh();
+        }
+
+        async Task Delete(Tea tea)
+        {
+            await TeaService.DeleteTea(tea);
             await Refresh();
         }
 
@@ -74,6 +107,7 @@ namespace TeaPls.Views
             IsBusy = false;
         }
 
-        
+     
+
     }
 }

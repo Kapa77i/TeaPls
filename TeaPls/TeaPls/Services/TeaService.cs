@@ -56,6 +56,12 @@ namespace TeaPls.Services
 
         }
 
+        public static async Task<int> DeleteTea(Tea tea)
+        {
+            return await db.DeleteAsync(tea);
+
+        }
+
         public static async Task<IEnumerable<Tea>> GetTeas()
         {
             await Init();
