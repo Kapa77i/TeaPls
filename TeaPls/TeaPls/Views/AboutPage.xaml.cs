@@ -49,7 +49,7 @@ namespace TeaPls.Views
 
             Tea tea = await TeaService.GetTea(randomId);
 
-            //randomIdAforims.Text = $"{tea.Id}";
+            randomIdAforism.Text = $"{tea.Id}";
             randomPerson.Text = $"{tea.Text}";
             randomAforims.Text = $"{tea.Description}";
             

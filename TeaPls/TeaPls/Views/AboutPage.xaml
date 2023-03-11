@@ -41,23 +41,17 @@
          TextColor="{StaticResource TextColorDark}"  
          Text="Tea Aforism of the day:" />
                         </StackLayout>
-                        <Label Grid.Row="3" FontSize="16" Text="0" 
-                               x:Name="randomIdAforism" TextColor="{StaticResource TextColorDark}" IsVisible="true"/>
                         
-                        <Label Grid.Row="1" FontSize="16" Text="Random person?" 
+                        <Label Grid.Row="1" FontSize="16" Text="0" 
+                               x:Name="randomIdAforism" TextColor="{StaticResource TextColorDark}" IsVisible="false"/>
+                        
+                        <Label Grid.Row="2" FontSize="16" Text="Random person?" 
                                x:Name="randomPerson" TextColor="{StaticResource TextColorDark}" />
-                        
-                        <Label Grid.Row="2" FontSize="16" Text="Did you know that drinking tea can reduce a person's happiness by up to 100%?" 
+
+                        <Label Grid.Row="3" FontSize="16" Text="Did you know that drinking tea can reduce a person's happiness by up to 100%?" 
                                x:Name="randomAforims" TextColor="{StaticResource TextColorDark}" />
 
-                      
-
-                        <Button Grid.Row="4" 
-      FontSize="16" 
-      TextColor="#1666a6"
-      CornerRadius="15"
-      Text="Give me a new aforism" 
-      Clicked="Button_Clicked" />
+                        <Button Grid.Row="4"  FontSize="16"  TextColor="#1666a6" CornerRadius="15" Text="Give me a new aforism" Clicked="Button_Clicked" />
                     </Grid>
                 </Frame>
 
