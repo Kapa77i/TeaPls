@@ -1,20 +1,32 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Xamarin Forms Mobile App for Android Phone
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+## Introduction
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+This project was completed by a group of 2-4 students and graded based on the final project. The objective was to design and implement a simple mobile application (prototype level) that includes both UI and functionality. A schedule and plan were presented, with a time limit of 10 minutes.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+To pass the course, the following requirements must be met:
+- Plan accepted, final documentation, and application demonstrated
+- At least two fragments
+- Application scales on size of the display
+- Estimate on amount of work required
+- Application does not reset state variables on restart
+- User input
+- Display an image
+- Colours changed
+- Peer review
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+Extra requirements (optional):
+- Using remote server
+- Styles and themes
+- RecyclerView
+- LiveData
+- Repository
+- Using Camera
+- BLE (+2)
+- Other requirements must be negotiated with lecturer beforehand
+
+Grading is as follows:
+- Grade 2: 2 requirements met
+- Grade 3: 3 requirements met
+- Grade 4: 4 requirements met
+- Grade 5: 6 requirements met
