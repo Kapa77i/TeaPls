@@ -50,22 +50,10 @@ namespace TeaPls.Views
                 teaListId.Add((short)id);
             }
 
-            //for (int i = 0; i < teaList.; i++)
-            //{
-            //    teaListId.Add(teaList.)
-            //}
-            
-
 
             Random random = new Random();
             int randomId = random.Next(teaListId.Count);
             int rnd = teaListId[randomId];
-
-
-            //while (randomId == 0 || randomId == null)
-            //{
-            //    randomId = random.Next(1, 27);
-            //}
 
 
             while (rnd == int.Parse(randomIdAforism.Text))

@@ -27,12 +27,16 @@ namespace TeaPls.Services
 
         static async Task Init()
         {
-            if (db != null)
-            {
-                return;
-            }
+            // Reiti databaseen
+            var databasePath = Path.Combine(FileSystem.AppDataDirectory, "MyData.db");
 
-            teaList = new List<Tea>()
+            db = new SQLiteAsyncConnection(databasePath);
+
+            await db.CreateTableAsync<Tea>();
+
+            if (db == null)
+            {
+                teaList = new List<Tea>()
             {
                 new Tea { Text = "C. S. Lewis", Description=" “You can never get a cup of tea large enough or a book long enough to suit me.”" },
                 new Tea { Text = "Bill Watterson", Description="“Rainy days should be spent at home with a cup of tea and a good book.”" },
@@ -49,25 +53,32 @@ namespace TeaPls.Services
                 new Tea { Text = "Lo Tung", Description="“When I drink tea I am conscious of peace. The cool breath of heaven rises in my sleeves, and blows my cares away.” " }
             };
 
-            // Reiti databaseen
-            var databasePath = Path.Combine(FileSystem.AppDataDirectory, "MyData.db");
+                AddTeaList(teaList);
 
-            db = new SQLiteAsyncConnection(databasePath);
+               databasePath = Path.Combine(FileSystem.AppDataDirectory, "MyData.db");
 
-            await db.CreateTableAsync<Tea>();
+                db = new SQLiteAsyncConnection(databasePath);
+
+                await db.CreateTableAsync<Tea>();
+
+                return;
+            }
+
+           
+
+           
         }
 
-        //public static async Task AddTeaList(List<Tea> teaList)
-        //{
-        //    await Init();
+        public static async Task AddTeaList(List<Tea> teaList)
+        {
+            await Init();
 
-        //    for (int i = 0; i < teaList; i++)
-        //    {
+            foreach (var item in teaList)
+            {
+                await db.InsertAsync(item);
+            }
 
-        //    }
-
-        //    var id = await db.InsertAsync(tea);
-        //}
+        }
 
         public static async Task AddTea(string text, string description)
         {
