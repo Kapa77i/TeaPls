@@ -40,11 +40,11 @@ namespace TeaPls.Views
         {
         
             Random random = new Random();
-            int randomId = random.Next(19, 27);
+            int randomId = random.Next(1, 27);
 
            while(randomId == int.Parse(randomIdAforism.Text))
             {
-                randomId = random.Next(19, 27);
+                randomId = random.Next(1, 27);
             }
 
             Tea tea = await TeaService.GetTea(randomId);
