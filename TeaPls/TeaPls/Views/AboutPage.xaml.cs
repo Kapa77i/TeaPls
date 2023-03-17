@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using TeaPls.Models;
 using TeaPls.Services;
 using Xamarin.Forms;
@@ -38,21 +39,69 @@ namespace TeaPls.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-        
-            Random random = new Random();
-            int randomId = random.Next(1, 27);
+            List<Tea> teaList = new List<Tea>();
+            List<Int16> teaListId = new List<Int16>();
 
-           while(randomId == int.Parse(randomIdAforism.Text))
+            teaList = await TeaService.GetTeasit();
+
+            foreach (var item in teaList)
             {
-                randomId = random.Next(1, 27);
+                var id = item.Id;
+                teaListId.Add((short)id);
             }
 
-            Tea tea = await TeaService.GetTea(randomId);
+            //for (int i = 0; i < teaList.; i++)
+            //{
+            //    teaListId.Add(teaList.)
+            //}
+            
 
+
+            Random random = new Random();
+            int randomId = random.Next(teaListId.Count);
+            int rnd = teaListId[randomId];
+
+
+            //while (randomId == 0 || randomId == null)
+            //{
+            //    randomId = random.Next(1, 27);
+            //}
+
+
+            while (rnd == int.Parse(randomIdAforism.Text))
+            {
+                randomId = random.Next(teaListId.Count);
+                rnd = teaListId[randomId];
+            }
+            Tea tea = new Tea();
+            tea = await TeaService.GetTea(rnd);
             randomIdAforism.Text = $"{tea.Id}";
             randomPerson.Text = $"{tea.Text}";
             randomAforims.Text = $"{tea.Description}";
-            
+
+            //Tea tea = new Tea();
+
+            //if(tea == null)
+            //{
+            //    while (tea == null)
+            //    {
+            //        randomId = random.Next(1, 27);
+
+            //        tea = await TeaService.GetTea(rnd);
+            //        randomIdAforism.Text = $"{tea.Id}";
+            //        randomPerson.Text = $"{tea.Text}";
+            //        randomAforims.Text = $"{tea.Description}";
+            //    }
+            //}
+           
+            //else
+            //{
+            //    tea = await TeaService.GetTea(randomId);
+
+            //    randomIdAforism.Text = $"{tea.Id}";
+            //    randomPerson.Text = $"{tea.Text}";
+            //    randomAforims.Text = $"{tea.Description}";
+            //}
 
         }
     }
