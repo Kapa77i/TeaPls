@@ -11,29 +11,26 @@ using MongoDB.Driver.Linq;
 
 namespace TeaPls.Services
 {
-    public class MongoService
+    public static class MongoService
     {
-        string dbName = "TeaTask";
-        string collectionName = "TaskList";
+       static string dbName = "teapls";
+        static string collectionName = "teaaforism";
 
-        IMongoCollection<TeaAforism> aforismsCollection;
+        static IMongoCollection<TeaAforism> aforismsCollection;
 
-        public object APIKeys { get; private set; }
-
-        IMongoCollection<TeaAforism> AforismsCollection
+        static IMongoCollection<TeaAforism> AforismsCollection
         {
             get
             {
                 if (aforismsCollection == null)
                 {
-                    //APIKeys.Connection string is found in the portal under the "Connection String" blade
+                    string connectionString =
+  @"mongodb://teapls-db:D9mAfQnf6RmE3ja7MQpIhnoCcstbT7kd2ISI0U1TOxH3p2cXxTl17al6sAcwdVWRAGCRDCnRnZ2RACDbWobcmw==@teapls-db.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@teapls-db@";
                     MongoClientSettings settings = MongoClientSettings.FromUrl(
-                        new MongoUrl("mongodb://teapls-db:D9mAfQnf6RmE3ja7MQpIhnoCcstbT7kd2ISI0U1TOxH3p2cXxTl17al6sAcwdVWRAGCRDCnRnZ2RACDbWobcmw==@teapls-db.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@teapls-db@")
-                        );
-
+                      new MongoUrl(connectionString)
+                    );
                     settings.SslSettings =
-                        new SslSettings() { EnabledSslProtocols = SslProtocols.Tls12 };
-
+                      new SslSettings() { EnabledSslProtocols = SslProtocols.Tls12 };
                     //Clientti
                     var mongoClient = new MongoClient(settings);
 
@@ -51,9 +48,11 @@ namespace TeaPls.Services
             }
 
         }
-            #region Get Functions
 
-        public async Task<List<TeaAforism>> GetAllAforisms()
+
+        #region Get Functions
+
+        public async static Task<List<TeaAforism>> GetAllAforisms()
         {
             try
             {
@@ -73,10 +72,10 @@ namespace TeaPls.Services
 
         }
 
-        public async Task<TeaAforism> GetAforismById(Guid aforismId)
+        public async static Task<TeaAforism> GetAforismById(Guid aforismId)
         {
             var singleAforism = await AforismsCollection
-                .Find(f => f.Id.Equals(aforismId))
+                .Find(f => f._id.Equals(aforismId))
                 .FirstOrDefaultAsync();
             return singleAforism;
         }
@@ -84,7 +83,7 @@ namespace TeaPls.Services
         #endregion
 
         #region Search Functions
-        public async Task<List<TeaAforism>> GetAforismsByName(String text)
+        public async static Task<List<TeaAforism>> GetAforismsByName(String text)
         {
             var aforisms = await AforismsCollection
                 .AsQueryable()
@@ -97,27 +96,37 @@ namespace TeaPls.Services
         #endregion
 
         #region Save/Delete Functions
-        public async Task CreateTask(TeaAforism aforism)
+        public async static Task CreateAforism(TeaAforism aforism)
         {
             await AforismsCollection.InsertOneAsync(aforism);
         }
 
-        public async Task UpdateAforism(TeaAforism aforism)
+        public static async Task CreateAf(string text, string description)
         {
-            await AforismsCollection.ReplaceOneAsync(t => t.Id.Equals(aforism.Id), aforism);
+        
+            var aforism = new TeaAforism
+            {
+                _id = Guid.NewGuid().ToString(),
+                Text = text,
+                Description = description
+            };
+            
+            await AforismsCollection.InsertOneAsync(aforism);
         }
 
-        public async Task DeleteAforism(TeaAforism aforism)
+        public async static Task UpdateAforism(TeaAforism aforism)
         {
-            await AforismsCollection.DeleteOneAsync(t => t.Id.Equals(aforism.Id));
+            await AforismsCollection.ReplaceOneAsync(t => t._id.Equals(aforism._id), aforism);
+        }
+
+        public async static Task DeleteAforism(TeaAforism aforism)
+        {
+            await AforismsCollection.DeleteOneAsync(t => t._id.Equals(aforism._id));
         }
 
 
         #endregion
 
     }
-
-
-
 
 }
