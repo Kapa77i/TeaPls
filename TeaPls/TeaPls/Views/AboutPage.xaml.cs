@@ -40,11 +40,8 @@ namespace TeaPls.Views
         private async void Button_Clicked(object sender, EventArgs e)
         {
             List<TeaAforism> teaAforisms= new List<TeaAforism>();
-            List<Tea> teaList = new List<Tea>();
-            List<Int16> teaListId = new List<Int16>();
             List<string> teaAforismId = new List<string>();
 
-            teaList = await TeaService.GetTeasit();
             teaAforisms = await MongoService.GetAllAforisms();
 
             foreach (var item in teaAforisms)
@@ -72,30 +69,6 @@ namespace TeaPls.Views
             randomIdAforism.Text = $"{aforism._id}";
             randomPerson.Text = $"{aforism.Text}";
             randomAforims.Text = $"{aforism.Description}";
-
-            //Tea tea = new Tea();
-
-            //if(tea == null)
-            //{
-            //    while (tea == null)
-            //    {
-            //        randomId = random.Next(1, 27);
-
-            //        tea = await TeaService.GetTea(rnd);
-            //        randomIdAforism.Text = $"{tea.Id}";
-            //        randomPerson.Text = $"{tea.Text}";
-            //        randomAforims.Text = $"{tea.Description}";
-            //    }
-            //}
-           
-            //else
-            //{
-            //    tea = await TeaService.GetTea(randomId);
-
-            //    randomIdAforism.Text = $"{tea.Id}";
-            //    randomPerson.Text = $"{tea.Text}";
-            //    randomAforims.Text = $"{tea.Description}";
-            //}
 
         }
     }
