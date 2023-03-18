@@ -89,11 +89,11 @@
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:ItemsPage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Tea Aforism" Icon="icon_feed.png">
+    <!--<FlyoutItem Title="Tea Aforism" Icon="icon_feed.png">
         <ShellContent Route="LiveDataPage" ContentTemplate="{DataTemplate local:LiveDataPage}" />
-    </FlyoutItem>
+    </FlyoutItem>-->
 
-    <FlyoutItem Title="DB aforisms" Icon="icon_feed.png">
+    <FlyoutItem Title="Tea Aforisms" Icon="icon_bot.png">
         <ShellContent Route="AforismPage" ContentTemplate="{DataTemplate local:AforismPage}" />
     </FlyoutItem>
 

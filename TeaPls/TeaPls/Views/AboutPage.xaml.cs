@@ -39,33 +39,39 @@ namespace TeaPls.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
+            List<TeaAforism> teaAforisms= new List<TeaAforism>();
             List<Tea> teaList = new List<Tea>();
             List<Int16> teaListId = new List<Int16>();
+            List<string> teaAforismId = new List<string>();
 
             teaList = await TeaService.GetTeasit();
+            teaAforisms = await MongoService.GetAllAforisms();
 
-            foreach (var item in teaList)
+            foreach (var item in teaAforisms)
             {
-                var id = item.Id;
-                teaListId.Add((short)id);
+                var id = item._id;
+                teaAforismId.Add(id);
             }
 
 
             Random random = new Random();
-            int randomId = random.Next(teaListId.Count);
-            int rnd = teaListId[randomId];
+            int randomId = random.Next(teaAforismId.Count);
+            string randomString = teaAforismId[randomId];
+
+            //int rnd = teaListId[randomId];
 
 
-            while (rnd == int.Parse(randomIdAforism.Text))
+            while (randomString == randomIdAforism.Text)
             {
-                randomId = random.Next(teaListId.Count);
-                rnd = teaListId[randomId];
+                randomId = random.Next(teaAforismId.Count);
+                randomString = teaAforismId[randomId];
             }
-            Tea tea = new Tea();
-            tea = await TeaService.GetTea(rnd);
-            randomIdAforism.Text = $"{tea.Id}";
-            randomPerson.Text = $"{tea.Text}";
-            randomAforims.Text = $"{tea.Description}";
+
+            TeaAforism aforism = new TeaAforism();
+            aforism = await MongoService.GetAforismById(new Guid(randomString));
+            randomIdAforism.Text = $"{aforism._id}";
+            randomPerson.Text = $"{aforism.Text}";
+            randomAforims.Text = $"{aforism.Description}";
 
             //Tea tea = new Tea();
 
