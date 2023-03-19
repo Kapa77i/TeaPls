@@ -41,6 +41,9 @@
                                 <On Platform="iOS" Value="10,0" />
                             </OnPlatform>
                         </Slider.Margin>
+                        <Slider.ThumbImageSource>
+                            <FileImageSource File="teaCup.png" />
+                        </Slider.ThumbImageSource>
                     </Slider>
                     <!--<Slider Minimum="0" Maximum="5" Value="{Binding Rating, Mode=TwoWay}">
                         <Slider.ThumbImageSource>
