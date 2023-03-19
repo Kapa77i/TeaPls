@@ -13,7 +13,12 @@ namespace TeaPls.ViewModels
         private string text;
         private string description;
         public string Id { get; set; }
-
+        private ImageSource _photoSource;
+        public ImageSource PhotoSource
+        {
+            get { return _photoSource; }
+            set { SetProperty(ref _photoSource, value); }
+        }
         public string Text
         {
             get => text;
@@ -47,6 +52,7 @@ namespace TeaPls.ViewModels
                 Id = item.Id;
                 Text = item.Text;
                 Description = item.Description;
+                PhotoSource = item.PhotoSource;
             }
             catch (Exception)
             {

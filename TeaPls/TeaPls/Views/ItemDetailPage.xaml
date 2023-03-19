@@ -24,6 +24,7 @@
                 <Label Text="{Binding Description}" FontSize="Small" TextColor="{StaticResource TextColorDark}" Grid.Row="1" Grid.Column="1" />
                 <Label Text="Stars:" FontSize="Medium" TextColor="{StaticResource TextColorDark}" Grid.Row="2" Grid.Column="0" />
                 <Label Text="5" FontSize="Small" TextColor="{StaticResource TextColorDark}" Grid.Row="2" Grid.Column="1" />
+                <Image Grid.Row="3" Grid.ColumnSpan="2" Source="{Binding PhotoSource}" />
             </Grid>
         </Frame>
     </StackLayout>
