@@ -28,14 +28,16 @@
                     <Label Grid.Row="3" Grid.ColumnSpan="1" Text="Description" FontSize="Medium" TextColor="{StaticResource TextColorDark}" />
                     <Editor Grid.Row="4" Grid.ColumnSpan="2" Text="{Binding Description, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" TextColor="{StaticResource TextColorDark}" />
 
-                    <Button Grid.Row="5" Grid.Column="0" Text="Take a Photo" TextColor="#1666a6"  x:Name="takePhoto" BackgroundColor="Fuchsia" FontSize="16" CornerRadius="15" />
+                    <!--<Button Grid.Row="5" Grid.Column="0" Text="Take a Photo" TextColor="#1666a6"  x:Name="takePhoto" BackgroundColor="Fuchsia" FontSize="16" CornerRadius="15" />-->
                     <Button Grid.Row="5" Grid.Column="1" Text="Save" TextColor="Orange" Command="{Binding SaveCommand}"  FontSize="16" CornerRadius="15" />
 
-                    <Image Grid.Row="6" Grid.ColumnSpan="1" x:Name="image" />
+                    <!--<Image Grid.Row="6" Grid.ColumnSpan="1" x:Name="image" />-->
+                    <Image x:Name="myImage" Grid.Row="6" Grid.ColumnSpan="1" Source="{Binding PhotoPath}" />
+                    <Button Text="Take Photo" Grid.Row="5" Grid.Column="0" Clicked="takePhoto_Clicked" BackgroundColor="Fuchsia" FontSize="16" CornerRadius="15" />
 
                     <Button Grid.Row="7"  Text="Cancel" TextColor="#1666a6" Command="{Binding CancelCommand}" FontSize="16" CornerRadius="15" />
 
-                    <maps:Map Grid.Row="8" Grid.ColumnSpan="2" Grid.RowSpan="5" IsShowingUser="True" MapClicked="Map_MapClicked" MapType="Hybrid" HasZoomEnabled="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                    <maps:Map Grid.Row="8" Grid.ColumnSpan="2" Grid.RowSpan="5" IsShowingUser="True" MapType="Hybrid" HasZoomEnabled="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
                 </Grid>
 
             </Frame>
