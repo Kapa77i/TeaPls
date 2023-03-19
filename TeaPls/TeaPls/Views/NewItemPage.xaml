@@ -34,7 +34,9 @@
 
 
                     <!--<Image Grid.Row="6" Grid.ColumnSpan="1" x:Name="image" />-->
-                    <Image x:Name="myImage" Grid.Row="6" Grid.ColumnSpan="1" Source="{Binding PhotoPath}" />
+                    <!--<Image x:Name="myImage" Grid.Row="6" Grid.ColumnSpan="1" Source="{Binding PhotoPath}" />-->
+                    <Image x:Name="myImage" Grid.Row="6" Grid.ColumnSpan="1" Source="{Binding PhotoSource}" />
+
                     <!--<Button Text="Take Photo" Grid.Row="5" Grid.Column="0" Clicked="takePhoto_Clicked" BackgroundColor="Fuchsia" FontSize="16" CornerRadius="15" />-->
 
                     <Button Grid.Row="7"  Text="Cancel" TextColor="#1666a6" Command="{Binding CancelCommand}" FontSize="16" CornerRadius="15" />

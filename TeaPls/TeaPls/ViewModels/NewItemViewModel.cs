@@ -12,6 +12,7 @@ namespace TeaPls.ViewModels
     {
         private string text;
         private string description;
+        private ImageSource _photoSource;
 
         public NewItemViewModel()
         {
@@ -38,7 +39,11 @@ namespace TeaPls.ViewModels
             get => description;
             set => SetProperty(ref description, value);
         }
-
+        public ImageSource PhotoSource
+        {
+            get { return _photoSource; }
+            set { SetProperty(ref _photoSource, value); }
+        }
         public Command SaveCommand { get; }
         public Command CancelCommand { get; }
 
@@ -54,7 +59,9 @@ namespace TeaPls.ViewModels
             {
                 Id = Guid.NewGuid().ToString(),
                 Text = Text,
-                Description = Description
+                Description = Description,
+                PhotoSource = _photoSource
+                
             };
 
             await DataStore.AddItemAsync(newItem);
