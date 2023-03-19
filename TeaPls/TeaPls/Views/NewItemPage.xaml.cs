@@ -108,10 +108,12 @@ namespace TeaPls.Views
             }
         }
 
+
         public NewItemPage()
         {
             InitializeComponent();
-            BindingContext = this;
+            BindingContext = new NewItemViewModel();
+            //BindingContext = this;
         }
 
         async Task TakePhotoAsync()
@@ -148,7 +150,7 @@ namespace TeaPls.Views
             var newFile = Path.Combine(FileSystem.CacheDirectory, photo.FileName);
             using (var stream = await photo.OpenReadAsync())
             using (var newStream = File.OpenWrite(newFile))
-                await stream.CopyToAsync(newStream);
+            await stream.CopyToAsync(newStream);
 
             PhotoPath = newFile;
         }
@@ -162,5 +164,7 @@ namespace TeaPls.Views
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+
     }
 }
