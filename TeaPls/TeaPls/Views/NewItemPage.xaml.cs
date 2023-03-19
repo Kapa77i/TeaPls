@@ -37,7 +37,9 @@ namespace TeaPls.Views
 
         void Slider_ValueChanged(object sender, Xamarin.Forms.ValueChangedEventArgs e)
         {
-            var newStep = Math.Round(e.NewValue / 100); mySlider.Value = newStep * 100; lblText.Text = mySlider.Value.ToString(); lblText.TranslateTo(mySlider.Value * ((mySlider.Width - 40) / mySlider.Maximum), 0, 100);
+            var newValue = Math.Round(e.NewValue);
+            lblText.Text = newValue.ToString();
+            
         }
         private void OnSliderValueChanged(object sender, ValueChangedEventArgs e)
         {

@@ -35,8 +35,7 @@
                             </OnPlatform>
                         </Label.Margin>
                     </Label>
-                    <Slider x:Name="mySlider" Maximum="10000" Minimum="100" HorizontalOptions="FillAndExpand" 
-ValueChanged="Slider_ValueChanged" >
+                    <Slider x:Name="mySlider" Maximum="5" Minimum="1" HorizontalOptions="FillAndExpand" ValueChanged="Slider_ValueChanged" Value="{Binding Rating, Mode=TwoWay}">
                         <Slider.Margin>
                             <OnPlatform x:TypeArguments="Thickness">
                                 <On Platform="iOS" Value="10,0" />
