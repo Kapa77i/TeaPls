@@ -27,37 +27,35 @@
                     <Entry Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" TextColor="{StaticResource TextColorDark}" />
                     <Label Grid.Row="3" Grid.ColumnSpan="1" Text="Description" FontSize="Medium" TextColor="{StaticResource TextColorDark}" />
                     <Editor Grid.Row="4" Grid.ColumnSpan="2" Text="{Binding Description, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" TextColor="{StaticResource TextColorDark}" />
-                    <Label x:Name="lblText" Text="0" HorizontalOptions="Start" FontSize="Micro" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand">
+                    
+                    <Label Grid.Row="5" x:Name="lblText" Text="0" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Start" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand">
                         <Label.Margin>
                             <OnPlatform x:TypeArguments="Thickness">
-                                <On Platform="iOS" Value="15,0" />
                                 <On Platform="Android" Value="10,0" />
                             </OnPlatform>
                         </Label.Margin>
                     </Label>
-                    <Slider x:Name="mySlider" Maximum="5" Minimum="1" HorizontalOptions="FillAndExpand" ValueChanged="Slider_ValueChanged" Value="{Binding Rating, Mode=TwoWay}">
-                        <Slider.Margin>
-                            <OnPlatform x:TypeArguments="Thickness">
-                                <On Platform="iOS" Value="10,0" />
-                            </OnPlatform>
-                        </Slider.Margin>
-
+                    
+                    <Slider Grid.Row="6" x:Name="mySlider" Maximum="5" Minimum="1" HorizontalOptions="FillAndExpand" ValueChanged="Slider_ValueChanged" Value="{Binding Rating, Mode=TwoWay}">
+                        <Slider.ThumbImageSource>
+                            <FileImageSource File="teaslider.png" />
+                        </Slider.ThumbImageSource>
                     </Slider>
 
-                    <Button Grid.Row="6" Grid.Column="0" Text="Take a Photo" TextColor="#1666a6"  x:Name="takePhoto" BackgroundColor="Fuchsia" FontSize="16" CornerRadius="15" />
+                    <Button Grid.Row="7" Grid.Column="0" Text="Take a Photo" TextColor="#1666a6"  x:Name="takePhoto" BackgroundColor="Fuchsia" FontSize="16" CornerRadius="15" />
                     <!--<Button Grid.Row="5" Grid.Column="1" Text="Save" TextColor="Orange" Command="{Binding SaveCommand}"  FontSize="16" CornerRadius="15" />-->
-                    <Button Grid.Row="6" Grid.Column="1" Text="Save" TextColor="Orange" Command="{Binding SaveCommand}" FontSize="16" CornerRadius="15" />
+                    <Button Grid.Row="7" Grid.Column="1" Text="Save" TextColor="Orange" Command="{Binding SaveCommand}" FontSize="16" CornerRadius="15" />
 
 
                     <!--<Image Grid.Row="6" Grid.ColumnSpan="1" x:Name="image" />-->
                     <!--<Image x:Name="myImage" Grid.Row="6" Grid.ColumnSpan="1" Source="{Binding PhotoPath}" />-->
-                    <Image x:Name="myImage" Grid.Row="7" Grid.ColumnSpan="1" Source="{Binding PhotoSource}" />
+                    <Image x:Name="myImage" Grid.Row="8" Grid.ColumnSpan="1" Source="{Binding PhotoSource}" />
 
                     <!--<Button Text="Take Photo" Grid.Row="5" Grid.Column="0" Clicked="takePhoto_Clicked" BackgroundColor="Fuchsia" FontSize="16" CornerRadius="15" />-->
                     
-                    <Button Grid.Row="8"  Text="Cancel" TextColor="#1666a6" Command="{Binding CancelCommand}" FontSize="16" CornerRadius="15" />
+                    <Button Grid.Row="9"  Text="Cancel" TextColor="#1666a6" Command="{Binding CancelCommand}" FontSize="16" CornerRadius="15" />
 
-                    <maps:Map MapClicked="Map_MapClicked" Grid.Row="9" Grid.ColumnSpan="2" Grid.RowSpan="5" IsShowingUser="True" MapType="Hybrid" HasZoomEnabled="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                    <maps:Map MapClicked="Map_MapClicked" Grid.Row="10" Grid.ColumnSpan="2" Grid.RowSpan="5" IsShowingUser="True" MapType="Hybrid" HasZoomEnabled="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
                 </Grid>
 
             </Frame>

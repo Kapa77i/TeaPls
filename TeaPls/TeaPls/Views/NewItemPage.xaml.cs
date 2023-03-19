@@ -40,6 +40,7 @@ namespace TeaPls.Views
             var newValue = Math.Round(e.NewValue);
             lblText.Text = newValue.ToString();
             
+            
         }
         private void OnSliderValueChanged(object sender, ValueChangedEventArgs e)
         {
