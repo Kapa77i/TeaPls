@@ -42,18 +42,10 @@
                             </OnPlatform>
                         </Slider.Margin>
                         <Slider.ThumbImageSource>
-                            <FileImageSource File="teaCup.png" />
+                            <FileImageSource File="teaCup.png"/>
                         </Slider.ThumbImageSource>
+                        <Slider.Scale
                     </Slider>
-                    <!--<Slider Minimum="0" Maximum="5" Value="{Binding Rating, Mode=TwoWay}">
-                        <Slider.ThumbImageSource>
-                            <FontImageSource
-                    FontFamily="{StaticResource MaterialFontFamily}"
-                    Glyph="{StaticResource Star}"
-                    Size="64"
-                    Color="{DynamicResource SystemYellow}" />
-                        </Slider.ThumbImageSource>
-                    </Slider>-->
 
                     <Button Grid.Row="6" Grid.Column="0" Text="Take a Photo" TextColor="#1666a6"  x:Name="takePhoto" BackgroundColor="Fuchsia" FontSize="16" CornerRadius="15" />
                     <!--<Button Grid.Row="5" Grid.Column="1" Text="Save" TextColor="Orange" Command="{Binding SaveCommand}"  FontSize="16" CornerRadius="15" />-->
