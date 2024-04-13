@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TeaPls")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c58affa5d2e67c8a0510a873aaee051052e7dfe7")]
 [assembly: System.Reflection.AssemblyProductAttribute("TeaPls")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TeaPls")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

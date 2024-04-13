@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TeaPls.App"
-        
-    >
+             x:Class="TeaPls.App" 
+             >
     <!--
         Define global resources and styles here, that apply to all pages in your app.
     -->
@@ -11,8 +10,11 @@
         <ResourceDictionary>
             <Color x:Key="Primary">Orange</Color>
             <Color x:Key="RefresColor">Orange</Color>
-            <Color x:Key="BackGroundColorLight">#979dac</Color>
-            <Color x:Key="BackGroundColorDark">#335c67</Color>
+            <Color x:Key="TextColorDark">Orange</Color>
+            <Color x:Key="TextColorLight">black</Color>
+            <Color x:Key="BackGroundColorLight">orange</Color>
+            <Color x:Key="BackGroundColorDark">#1666a6</Color>
+            <Color x:Key="GridBackGroundColor">#1666a6</Color>
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="White"></Setter>
 

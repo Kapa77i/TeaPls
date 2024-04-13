@@ -3,20 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TeaPls.Views.ThemePage" Title="Theme"
               BackgroundColor="{AppThemeBinding Dark={StaticResource BackGroundColorDark}, Light={StaticResource BackGroundColorLight}}">
-    <ContentPage.Resources>
-        <Style x:Key="DarkMode" TargetType="StackLayout">
-            <Setter Property="BackgroundColor" Value="#333333" />
-        </Style>
-        <Style x:Key="LightMode" TargetType="StackLayout">
-            <Setter Property="BackgroundColor" Value="#FFFFFF" />
-        </Style>
-    </ContentPage.Resources>
-    <ContentPage.Content>
 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="10,10,10,10">
 
-        <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-            <Switch x:Name="mySwitch" Toggled="OnSwitchToggled" />
-            <Label x:Name="switchLabel" Text="Night mod: " />
-        </StackLayout>
-    </ContentPage.Content>
+                <Frame CornerRadius="20" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="25,25,25,25" BorderColor="orange"  HasShadow="False">
+                    <StackLayout Orientation="Vertical" Padding="10,10,10,10">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Switch x:Name="mySwitch" Toggled="OnSwitchToggled" Grid.Row="0" Grid.Column="1" OnColor="{StaticResource TextColorDark}"/>
+                            <Label x:Name="switchLabel" Text="Night mode: " FontSize="20" Grid.Row="0" Grid.Column="0" TextColor="{StaticResource TextColorDark}"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>

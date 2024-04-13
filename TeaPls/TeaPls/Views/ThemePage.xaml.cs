@@ -12,7 +12,7 @@ namespace TeaPls.Views
         }
         private void OnSwitchToggled(object sender, ToggledEventArgs e)
         {
-            switchLabel.Text = $"Night mode: {(e.Value ? e.Value.ToString() : e.Value.ToString())}.";
+            //switchLabel.Text = $"Night mode: {(e.Value ? e.Value.ToString() : e.Value.ToString())}.";
 
             if (e.Value == true)
             {

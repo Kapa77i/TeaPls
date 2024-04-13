@@ -1,27 +1,65 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             
              x:Class="TeaPls.Views.NewItemPage"
              Shell.PresentationMode="ModalAnimated"
-             Title="New Item"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-             ios:Page.UseSafeArea="true"
-            BackgroundColor="{AppThemeBinding Dark={StaticResource BackGroundColorDark}, Light={StaticResource BackGroundColorLight}}">
+             Title="New Item"         
+             BackgroundColor="{AppThemeBinding Dark={StaticResource BackGroundColorDark}, Light={StaticResource BackGroundColorLight}}"
+>
 
     <ContentPage.Content>
-        <StackLayout Spacing="3" Padding="15">
-            <Label Text="Text" FontSize="Medium" />
-            <Entry Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" />
-            <Label Text="Description" FontSize="Medium" />
-            <Editor Text="{Binding Description, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
-            <StackLayout Orientation="Horizontal">
-                <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
-                <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
-            </StackLayout>
-            <Button Text="Take a Photo"    
-                    x:Name="takePhoto"    
-                    BackgroundColor="Fuchsia"/>
-            <Image x:Name="image"/>
+        <StackLayout Padding="10,10,10,10">
+            <Frame CornerRadius="20" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="25,25,25,25" BorderColor="orange"  HasShadow="False">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <!--ColumnSpan = leveys, rowSpan = korkeus-->
+
+                    <Label Grid.Row="1" Grid.ColumnSpan="1" Text="Text" FontSize="Medium" TextColor="{StaticResource TextColorDark}" />
+                    <Entry Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" TextColor="{StaticResource TextColorDark}" />
+                    <Label Grid.Row="3" Grid.ColumnSpan="1" Text="Description" FontSize="Medium" TextColor="{StaticResource TextColorDark}" />
+                    <Editor Grid.Row="4" Grid.ColumnSpan="2" Text="{Binding Description, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" TextColor="{StaticResource TextColorDark}" />
+                    
+                    <Label Grid.Row="5" x:Name="lblText" Text="0" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Start" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand">
+                        <Label.Margin>
+                            <OnPlatform x:TypeArguments="Thickness">
+                                <On Platform="Android" Value="10,0" />
+                            </OnPlatform>
+                        </Label.Margin>
+                    </Label>
+                    
+                    <Slider Grid.Row="6" x:Name="mySlider" Maximum="5" Minimum="1" HorizontalOptions="FillAndExpand" ValueChanged="Slider_ValueChanged" Value="{Binding Rating, Mode=TwoWay}">
+                        <Slider.ThumbImageSource>
+                            <FileImageSource File="teaslider.png" />
+                        </Slider.ThumbImageSource>
+                    </Slider>
+
+                    <Button Grid.Row="7" Grid.Column="0" Text="Take a Photo" TextColor="#1666a6"  x:Name="takePhoto" BackgroundColor="Fuchsia" FontSize="16" CornerRadius="15" />
+                    <!--<Button Grid.Row="5" Grid.Column="1" Text="Save" TextColor="Orange" Command="{Binding SaveCommand}"  FontSize="16" CornerRadius="15" />-->
+                    <Button Grid.Row="7" Grid.Column="1" Text="Save" TextColor="Orange" Command="{Binding SaveCommand}" FontSize="16" CornerRadius="15" />
+
+
+                    <!--<Image Grid.Row="6" Grid.ColumnSpan="1" x:Name="image" />-->
+                    <!--<Image x:Name="myImage" Grid.Row="6" Grid.ColumnSpan="1" Source="{Binding PhotoPath}" />-->
+                    <Image x:Name="myImage" Grid.Row="8" Grid.ColumnSpan="1" Source="{Binding PhotoSource}" />
+
+                    <!--<Button Text="Take Photo" Grid.Row="5" Grid.Column="0" Clicked="takePhoto_Clicked" BackgroundColor="Fuchsia" FontSize="16" CornerRadius="15" />-->
+                    
+                    <Button Grid.Row="9"  Text="Cancel" TextColor="#1666a6" Command="{Binding CancelCommand}" FontSize="16" CornerRadius="15" />
+
+                    <maps:Map MapClicked="Map_MapClicked" Grid.Row="10" Grid.ColumnSpan="2" Grid.RowSpan="5" IsShowingUser="True" MapType="Hybrid" HasZoomEnabled="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                </Grid>
+
+            </Frame>
+
         </StackLayout>
     </ContentPage.Content>
 

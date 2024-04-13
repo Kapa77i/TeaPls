@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
+	<style name="MyTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
+		<item name="android:windowBackground">@drawable/pattern</item>
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowFullscreen">true</item>
+		<item name="android:windowContentOverlay">@null</item>
+		<item name="android:windowActionBar">true</item>
+	</style>
 	<!-- Base theme applied no matter what API -->
 	<style name="MainTheme" parent="MainTheme.Light">
-		<!--Customize your theme here-->
+		<item name="android:windowBackground">@drawable/pattern</item>
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowFullscreen">true</item>
+		<item name="colorPrimaryDark">#ff69b4</item>
 	</style>
 
 	<!--Light theme-->
@@ -14,8 +24,8 @@
 
 	<!--Dark theme-->
 	<style name="MainTheme.Dark" parent="MainTheme.Base">
-		<item name="colorPrimary">#2196F3</item>
-		<item name="colorPrimaryDark">#1976D2</item>
+		<item name="colorPrimary">#1666a6</item>
+		<item name="colorPrimaryDark">#1666a6</item>
 		<item name="colorAccent">#ffcb7c</item>
 	</style>
 

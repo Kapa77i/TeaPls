@@ -11,6 +11,7 @@ namespace TeaPls.ViewModels
     public class BaseViewModel : INotifyPropertyChanged
     {
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+       public ITeaService<Tea> TeaService => DependencyService.Get<ITeaService<Tea>>();
 
         bool isBusy = false;
         public bool IsBusy
@@ -38,6 +39,7 @@ namespace TeaPls.ViewModels
             OnPropertyChanged(propertyName);
             return true;
         }
+
 
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;

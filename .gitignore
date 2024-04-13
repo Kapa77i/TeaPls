@@ -6,6 +6,13 @@
 /TeaPls/TeaPls.Android/bin
 /TeaPls/TeaPls/bin
 
+/TeaPls/TeaPls/obj
+/TeaPls/TeaPls.Android/obj
+
+
+
+
+
 # User-specific files
 *.suo
 *.user

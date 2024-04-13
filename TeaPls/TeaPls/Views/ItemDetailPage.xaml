@@ -1,17 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="TeaPls.Views.ItemDetailPage"
              Title="{Binding Title}"
-           BackgroundColor="{AppThemeBinding Dark={StaticResource BackGroundColorDark}, Light={StaticResource BackGroundColorLight}}">
+             BackgroundColor="{AppThemeBinding Dark={StaticResource BackGroundColorDark}, Light={StaticResource BackGroundColorLight}}">
+            
 
-    <StackLayout Spacing="20" Padding="15">
-        <Label Text="Tea:" FontSize="Medium" />
-        <Label Text="{Binding Text}" FontSize="Small"/>
-        <Label Text="Description:" FontSize="Medium" />
-        <Label Text="{Binding Description}" FontSize="Small"/>
-        <Label Text="Stars:" FontSize="Medium" />
-        <Label Text="5" FontSize="Small"/>
+    <StackLayout Orientation="Vertical" Padding="10,10,10,10">
+        <Frame CornerRadius="20" BackgroundColor="{StaticResource GridBackGroundColor}" Padding="25,25,25,25" BorderColor="orange"  HasShadow="False">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Tea:" FontSize="Medium" TextColor="{StaticResource TextColorDark}" Grid.Row="0" Grid.Column="0" />
+                <Label Text="{Binding Text}" FontSize="Small" TextColor="{StaticResource TextColorDark}" Grid.Row="0" Grid.Column="1" />
+                <Label Text="Description:" FontSize="Medium" TextColor="{StaticResource TextColorDark}" Grid.Row="1" Grid.Column="0" />
+                <Label Text="{Binding Description}" FontSize="Small" TextColor="{StaticResource TextColorDark}" Grid.Row="1" Grid.Column="1" />
+                <Label Text="Stars:" FontSize="Medium" TextColor="{StaticResource TextColorDark}" Grid.Row="2" Grid.Column="0" />
+                <Label Text="{Binding Rating}" FontSize="Small" TextColor="{StaticResource TextColorDark}" Grid.Row="2" Grid.Column="1" />
+                <Image Grid.Row="3" Grid.ColumnSpan="2" Source="{Binding PhotoSource}" />
+                <maps:Map x:Name="itemMap" Grid.Row="4" Grid.ColumnSpan="2" HasScrollEnabled="true" MapType="Hybrid" HasZoomEnabled="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+            </Grid>
+        </Frame>
     </StackLayout>
 
 </ContentPage>

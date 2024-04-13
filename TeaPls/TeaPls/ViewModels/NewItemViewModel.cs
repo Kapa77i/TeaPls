@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 using TeaPls.Models;
+using TeaPls.Services;
 using Xamarin.Forms;
 
 namespace TeaPls.ViewModels
@@ -11,6 +12,10 @@ namespace TeaPls.ViewModels
     {
         private string text;
         private string description;
+        private ImageSource _photoSource;
+        private double rating;
+        private double longitude;
+        private double latitude;
 
         public NewItemViewModel()
         {
@@ -26,6 +31,22 @@ namespace TeaPls.ViewModels
                 && !String.IsNullOrWhiteSpace(description);
         }
 
+        public double Rating
+        {
+            get => rating;
+            set => SetProperty(ref rating, value);
+        }
+
+        public double Longitude
+        {
+            get => longitude;
+            set => SetProperty(ref longitude, value);
+        }
+        public double Latitude
+        {
+            get => latitude;
+            set => SetProperty(ref latitude, value);
+        }
         public string Text
         {
             get => text;
@@ -37,7 +58,11 @@ namespace TeaPls.ViewModels
             get => description;
             set => SetProperty(ref description, value);
         }
-
+        public ImageSource PhotoSource
+        {
+            get { return _photoSource; }
+            set { SetProperty(ref _photoSource, value); }
+        }
         public Command SaveCommand { get; }
         public Command CancelCommand { get; }
 
@@ -53,7 +78,12 @@ namespace TeaPls.ViewModels
             {
                 Id = Guid.NewGuid().ToString(),
                 Text = Text,
-                Description = Description
+                Description = Description,
+                PhotoSource = _photoSource,
+                Longitude = longitude,
+                Latitude = latitude,
+                Rating = rating
+                
             };
 
             await DataStore.AddItemAsync(newItem);

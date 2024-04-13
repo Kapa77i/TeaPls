@@ -4,7 +4,7 @@
        xmlns:local="clr-namespace:TeaPls.Views"
        Title="TeaPls"
        x:Class="TeaPls.AppShell"
-       FlyoutBackgroundColor="{AppThemeBinding Dark={StaticResource BackGroundColorDark}, Light={StaticResource BackGroundColorLight}}">
+       FlyoutBackgroundColor="#1666a6">
 
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
@@ -17,9 +17,11 @@
             <Style x:Key="BaseStyle" TargetType="Element">
                 <Setter Property="Shell.BackgroundColor" Value="#1666a6" />
                 <Setter Property="Shell.ForegroundColor" Value="Orange" />
+
                 <Setter Property="Shell.TitleColor" Value="Orange" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+
                 <Setter Property="Shell.TabBarBackgroundColor" Value="Orange" />
                 <Setter Property="Shell.TabBarForegroundColor" Value="#1f1c18"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
@@ -47,7 +49,7 @@
                             </VisualState>
                             <VisualState x:Name="Selected">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource BackGroundColorLight}, Light={StaticResource BackGroundColorDark}}" />
+                                    <Setter Property="BackgroundColor" Value="#1b7dcc"  />
                                 </VisualState.Setters>
                             </VisualState>
                         </VisualStateGroup>
@@ -87,13 +89,19 @@
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:ItemsPage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Feed" Icon="icon_feed.png">
+    <!--<FlyoutItem Title="Tea Aforism" Icon="icon_feed.png">
         <ShellContent Route="LiveDataPage" ContentTemplate="{DataTemplate local:LiveDataPage}" />
+    </FlyoutItem>-->
+
+    <FlyoutItem Title="Tea Aforisms" Icon="icon_bot.png">
+        <ShellContent Route="AforismPage" ContentTemplate="{DataTemplate local:AforismPage}" />
     </FlyoutItem>
 
     <FlyoutItem Title="Settings" Icon="icon_theme.png">
         <ShellContent Route="ThemePage" ContentTemplate="{DataTemplate local:ThemePage}" />
     </FlyoutItem>
+
+  
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
     <!--<MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">

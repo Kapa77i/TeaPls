@@ -8,7 +8,7 @@ namespace TeaPls.ViewModels
     {
         public AboutViewModel()
         {
-            Title = "TeaPls";
+            Title = "About";
             OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
         }
 
